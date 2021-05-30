@@ -1,0 +1,47 @@
+{
+  "name": "openapi-generate-config",
+  "version": "1.1.0",
+  "description": "run openapi-typescript by config",
+  "main": "dist/index.js",
+  "bin": {
+    "openapi-make": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run clean  && npm run copy-files && tsc",
+    "build-test": "npm run clean  && npm run copy-files && tsc && node dist/index.js",
+    "clean": "rimraf dist/ && rimraf generateTypeBySwagger.json",
+    "copy-files": "copyfiles -u 2  ./src/libs/generateTypeBySwagger.json ./dist/libs",
+    "dev": "nodemon --watch src/**/*.ts --exec ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leesama/openapi-generate-config.git"
+  },
+  "author": "leesher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leesama/openapi-generate-config/issues"
+  },
+  "homepage": "https://github.com/leesama/openapi-generate-config#readme",
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.11",
+    "@types/node": "^15.6.1",
+    "@types/request": "^2.48.5",
+    "@types/write": "^2.0.0",
+    "nodemon": "^2.0.7",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "copyfiles": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "colors": "^1.4.0",
+    "fs-extra": "^10.0.0",
+    "openapi-typescript": "^3.3.1",
+    "request": "^2.88.2",
+    "write": "^2.0.0"
+  }
+}
