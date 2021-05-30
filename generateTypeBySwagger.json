@@ -1,5 +1,0 @@
-{
-  "doc":"请参考README.md,https://github.com/leesama/openapi-generate-config#readme",
-  "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json",
-  "outDir": "src/types/request.d.ts"
-}

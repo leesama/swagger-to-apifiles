@@ -28,12 +28,21 @@ npx openapi-make
 
 ```json
 {
-  // swagger链接
   "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json",
-  // 输出的目录
+
   "outDir": "./src/types/request.d.ts"
 }
 ```
+
+### 配置参数说明：
+
+### swaggerUrl
+
+swagger 链接
+
+### outDir
+
+输出的目录
 
 如果项目根目录有配置文件,直接读取配置文件内容并根据配置生成文件
 
