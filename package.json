@@ -1,6 +1,6 @@
 {
   "name": "openapi-generate-config",
-  "version": "1.1.0",
+  "version": "3.0.6",
   "description": "run openapi-typescript by config",
   "main": "dist/index.js",
   "bin": {
@@ -9,12 +9,22 @@
   "files": [
     "dist"
   ],
+  "keywords": ["swagger","umi","request"],
+  "nodemonConfig": {
+    "ignore": [
+      "src/types/*",
+      "src/services/*",
+      "tsconfig.json",
+      "services.d.ts"
+    ]
+  },
   "scripts": {
     "build": "npm run clean  && npm run copy-files && tsc",
     "build-test": "npm run clean  && npm run copy-files && tsc && node dist/index.js",
-    "clean": "rimraf dist/ && rimraf generateTypeBySwagger.json",
-    "copy-files": "copyfiles -u 2  ./src/libs/generateTypeBySwagger.json ./dist/libs",
-    "dev": "nodemon --watch src/**/*.ts --exec ts-node src/index.ts"
+    "clean": "fse remove dist/ && fse remove generateTypeBySwagger.json && fse remove src/services/ && fse remove src/types/ && fse remove services.d.ts",
+    "copy-files": "fse copy  ./src/templates ./dist/templates",
+    "dev": "nodemon  --watch ./ --exec ts-node src/index.ts",
+    "publish": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
@@ -28,6 +38,7 @@
   "homepage": "https://github.com/leesama/openapi-generate-config#readme",
   "devDependencies": {
     "@types/fs-extra": "^9.0.11",
+    "@types/lodash": "^4.14.170",
     "@types/node": "^15.6.1",
     "@types/request": "^2.48.5",
     "@types/write": "^2.0.0",
@@ -36,12 +47,14 @@
     "typescript": "^4.3.2"
   },
   "dependencies": {
-    "copyfiles": "^2.4.1",
-    "rimraf": "^3.0.2",
-    "colors": "^1.4.0",
+    "@atao60/fse-cli": "^0.0.56",
+    "chalk": "^4.1.1",
+    "change-case": "^4.1.2",
     "fs-extra": "^10.0.0",
+    "got": "^11.8.2",
+    "lodash": "^4.17.21",
     "openapi-typescript": "^3.3.1",
-    "request": "^2.88.2",
-    "write": "^2.0.0"
+    "read-pkg-up": "^7.0.1",
+    "rimraf": "^3.0.2"
   }
 }

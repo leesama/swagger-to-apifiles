@@ -1,0 +1,31 @@
+
+type Operations = import('@/types/request').operations;
+
+// 请求的结果数据类型
+declare type ReqResType<T extends keyof Operations> = Required<
+  Operations[T]['responses'][200] extends {
+    schema: infer S;
+  }
+    ? S
+    : unknown
+>;
+// 请求的Data数据类型
+declare type ReqDataType<T extends keyof Operations> = ReqResType<T> extends {
+  data: infer D;
+}
+  ? D
+  : any;
+// 请求的参数类型
+declare type ReqParamsType<T extends keyof Operations> = Operations[T] extends {
+  parameters: infer P;
+}
+  ? P extends {
+      query: infer Q;
+    }
+    ? Q
+    : P extends {
+        body: infer B;
+      }
+    ? B[keyof B]
+    : void
+  : void;

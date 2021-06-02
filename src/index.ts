@@ -1,21 +1,22 @@
 #!/usr/bin/env node
-import r from "request";
-import { promisify } from "util";
-import path from "path";
-import write from "write";
-import openapiTS from "openapi-typescript";
-import getConfig from "./libs/getConfig";
 
-const request = promisify(r);
+import path from "path";
+import { outputFileSync } from "fs-extra";
+import openapiTS from "openapi-typescript";
+import getConfig from "./getConfig";
+import makeServiceFile from "./requestTemplateMaker";
+import getSchemaData from "./getSchemaData";
 
 async function main() {
-  const { swaggerUrl: url, outDir } = getConfig();
-  const { body, statusCode } = await request({
-    url,
-  });
-  if (statusCode === 200) {
-    const output = openapiTS(JSON.parse(body as string));
-    write.sync(path.resolve(outDir), output);
+  try {
+    const { swaggerUrl: url, outDir, serviceFileDir } = getConfig();
+    const schemaData = await getSchemaData(url);
+    outputFileSync(path.resolve(outDir), openapiTS(schemaData));
+    if (serviceFileDir) {
+      makeServiceFile(schemaData);
+    }
+  } catch (error) {
+    console.log(error);
   }
 }
 main();
