@@ -16,9 +16,9 @@ const setTemplatesToSchema = (
   let currentService: ServiceMapValue;
   Object.keys(schema.paths).forEach((requestUrl) => {
     const path = schema.paths[requestUrl];
-    const [firstUrlItem, secondUrlItem] = takeRight(requestUrl.split("/"), 2);
-    const methodName =
-      camelCase(firstUrlItem) + pascalCase(secondUrlItem.replace(".json", ""));
+    const methodName = camelCase(
+      requestUrl.split("/").join("").replace(".json", "")
+    );
     const typePrefix = pascalCase(methodName);
     if (path.get) {
       const operationId = path.get.operationId;
