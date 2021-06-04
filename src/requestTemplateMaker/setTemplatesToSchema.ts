@@ -1,4 +1,4 @@
-import { takeRight, camelCase } from "lodash";
+import { camelCase } from "lodash";
 import { join, resolve } from "path";
 import pascalCase from "pascalcase";
 import { Schema, ServiceMapValue } from "../data";
@@ -16,9 +16,7 @@ const setTemplatesToSchema = (
   let currentService: ServiceMapValue;
   Object.keys(schema.paths).forEach((requestUrl) => {
     const path = schema.paths[requestUrl];
-    const methodName = camelCase(
-      requestUrl.split("/").join("").replace(".json", "")
-    );
+    const methodName = camelCase(requestUrl.replace(".json", ""));
     const typePrefix = pascalCase(methodName);
     if (path.get) {
       const operationId = path.get.operationId;
