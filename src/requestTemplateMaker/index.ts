@@ -23,14 +23,10 @@ const makeServiceFile = (schema: Schema) => {
     );
   });
   // 写入工具泛型
-  outputFileSync(path.resolve("services.d.ts"), getTemplate("type"));
-  const tsconfigObj = readJsonSync(path.resolve("tsconfig.json"));
-  if (!tsconfigObj?.include?.find((i: string) => i === "services.d.ts")) {
-    writeJsonSync(path.resolve("tsconfig.json"), {
-      ...tsconfigObj,
-      include: [...(tsconfigObj.include ?? []), "services.d.ts"],
-    });
-  }
+  outputFileSync(
+    path.resolve("src/types/serviceUtilGeneric.d.ts"),
+    getTemplate("type")
+  );
   success("文件写入成功");
 };
 export default makeServiceFile;

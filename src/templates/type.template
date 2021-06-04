@@ -1,22 +1,21 @@
-
-type Operations = import('@/types/request').operations;
+export type Operations = import("./request").operations;
 
 // 请求的结果数据类型
-declare type ReqResType<T extends keyof Operations> = Required<
-  Operations[T]['responses'][200] extends {
+export type ReqResType<T extends keyof Operations> = Required<
+  Operations[T]["responses"][200] extends {
     schema: infer S;
   }
     ? S
     : unknown
 >;
 // 请求的Data数据类型
-declare type ReqDataType<T extends keyof Operations> = ReqResType<T> extends {
+export type ReqDataType<T extends keyof Operations> = ReqResType<T> extends {
   data: infer D;
 }
   ? D
   : any;
 // 请求的参数类型
-declare type ReqParamsType<T extends keyof Operations> = Operations[T] extends {
+export type ReqParamsType<T extends keyof Operations> = Operations[T] extends {
   parameters: infer P;
 }
   ? P extends {

@@ -1,4 +1,4 @@
-import { camelCase } from "camel-case";
+import { camelCase } from "lodash";
 import { Schema, ServiceMapValue } from "../data";
 import { error } from "../utils";
 

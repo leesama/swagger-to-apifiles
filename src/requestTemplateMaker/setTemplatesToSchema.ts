@@ -1,6 +1,6 @@
-import { takeRight } from "lodash";
+import { takeRight, camelCase } from "lodash";
 import { join, resolve } from "path";
-import { pascalCase, camelCase } from "change-case";
+import pascalCase from "pascalcase";
 import { Schema, ServiceMapValue } from "../data";
 import getConfig from "../getConfig";
 import getHeadTempalte from "./headTempalte";
@@ -23,23 +23,43 @@ const setTemplatesToSchema = (
     if (path.get) {
       const operationId = path.get.operationId;
       const description = path.get.summary;
-      const template = `
+      // 是否有参数
+      const hasParam = path.get.parameters;
+      let template = "";
+      if (!hasParam) {
+        template = `
 // ${description}
-// ${description}参数类型
-export type ${typePrefix}ReqParams= ReqParamsType<'${operationId}'>
-// ${description}结果类型
+// 结果类型
 export type ${typePrefix}ReqRes= ReqResType<'${operationId}'>
-//  ${description}结果中的data类型
+// 结果中的data类型
+export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
+export function ${methodName}(){
+  return request<${typePrefix}ReqRes>(
+    '${requestUrl}',
+    {
+      method: 'GET'
+    }
+  )
+}`;
+      } else {
+        template = `
+// ${description}
+// 参数类型
+export type ${typePrefix}ReqParams= ReqParamsType<'${operationId}'>
+// 结果类型
+export type ${typePrefix}ReqRes= ReqResType<'${operationId}'>
+// 结果中的data类型
 export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
 export function ${methodName}(params: ${typePrefix}ReqParams){
   return request<${typePrefix}ReqRes>(
     '${requestUrl}',
     {
-      method: 'get',
+      method: 'GET',
       params
     }
   )
 }`;
+      }
       currentService = serviceMap.get(path.get.tags![0])!;
       currentService.requestsTemplates.push(template);
     }
@@ -51,17 +71,17 @@ export function ${methodName}(params: ${typePrefix}ReqParams){
           : "form";
       const template = `
 // ${description}
-// ${description}参数类型
+// 参数类型
 export type ${typePrefix}ReqParams= ReqParamsType<'${operationId}'>
-// ${description}结果类型
+// 结果类型
 export type ${typePrefix}ReqRes= ReqResType<'${operationId}'>
-//  ${description}结果中的data类型
+// 结果中的data类型
 export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
 export function ${methodName}(data: ${typePrefix}ReqParams){
   return request<${typePrefix}ReqRes>(
     '${requestUrl}',
     {
-      method: 'post',
+      method: 'POST',
       data,
       requestType:'${requestType}'
     }
@@ -76,8 +96,8 @@ export function ${methodName}(data: ${typePrefix}ReqParams){
     );
 
     const descriptionTemplate = `
-    // ${currentService.description}
-    //   ${currentService.name}
+// ${currentService.description}
+// ${currentService.name}
         `;
     currentService.beforeTemplate = descriptionTemplate + getHeadTempalte();
   });
