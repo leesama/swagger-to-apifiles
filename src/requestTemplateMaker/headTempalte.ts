@@ -4,7 +4,7 @@ import path from "path";
 const getHeadTempalte = () => {
   const packageInfo = readJSONSync(path.resolve("./package.json"));
   const commonHead = `
-import {ReqParamsType,ReqDataType,ReqResType} from "../types/serviceUtilGeneric"
+import type {ReqParamsType,ReqDataType,ReqResType} from "../types/serviceUtilGeneric"
   `;
   let headTempalte = `
 import { request } from 'umi';
