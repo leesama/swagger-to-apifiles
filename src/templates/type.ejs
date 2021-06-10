@@ -1,4 +1,6 @@
 import type {operations } from "./request"
+// 枚举的最后一个类型值组成的类型
+type UniqueEnum=<%-data%>|undefined
 // 请求的结果数据类型
 export type ReqResType<T extends keyof operations> = Required<
 operations[T]["responses"][200] extends {

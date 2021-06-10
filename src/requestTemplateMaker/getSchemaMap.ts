@@ -1,6 +1,6 @@
 import { camelCase } from "lodash";
 import { Schema, ServiceMapValue } from "../data";
-import { error } from "../utils";
+import { log } from "../utils";
 
 const getSchemaMap = (schema: Schema) => {
   const serviceMap = new Map<string, ServiceMapValue>();
@@ -10,7 +10,7 @@ const getSchemaMap = (schema: Schema) => {
       s.description.replace("Controller", "")
     );
     if (serviceMap.has(s.name)) {
-      error(`有重复的ctroller,${s.name} ${s.description},请修改`);
+      log.error(`有重复的ctroller,${s.name} ${s.description},请修改`);
       process.exit(1);
     }
     serviceMap.set(s.name, {
