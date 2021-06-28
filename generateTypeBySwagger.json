@@ -1,6 +1,0 @@
-{
-  "doc":"请参考README.md,https://github.com/leesama/openapi-generate-config#readme",
-  "swaggerUrl": "http://10.255.68.27:5566/v2/api-docs?group=%E6%99%AE%E6%83%A0%E9%87%91%E8%9E%8D2.0%E6%8E%A5%E5%8F%A3",
-  "outDir": "src/types/request.d.ts",  
-  "serviceFileDir": "src/services"
-}
