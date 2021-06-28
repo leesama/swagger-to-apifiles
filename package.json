@@ -39,6 +39,7 @@
   },
   "homepage": "https://github.com/leesama/openapi-generate-config#readme",
   "devDependencies": {
+    "@types/ejs": "^3.0.6",
     "@types/fs-extra": "^9.0.11",
     "@types/lodash": "^4.14.170",
     "@types/node": "^15.6.1",
@@ -47,8 +48,7 @@
     "@types/write": "^2.0.0",
     "nodemon": "^2.0.7",
     "ts-node": "^10.0.0",
-    "typescript": "^4.3.2",
-    "@types/ejs": "^3.0.6"
+    "typescript": "^4.3.2"
   },
   "dependencies": {
     "@atao60/fse-cli": "^0.0.56",
@@ -61,6 +61,6 @@
     "openapi-typescript": "^3.3.1",
     "pascalcase": "^1.0.0",
     "read-pkg-up": "^7.0.1",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
   }
 }

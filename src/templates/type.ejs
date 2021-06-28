@@ -1,22 +1,22 @@
-import type {operations } from "./request"
-// 枚举的最后一个类型值组成的类型
-type UniqueEnum=<%-data%>|undefined
+import type {operations  as requestOperations} from "./request"
+import type {operations  as responseOperations} from "./response"
+
 // 请求的结果数据类型
-export type ReqResType<T extends keyof operations> = Required<
-operations[T]["responses"][200] extends {
+export type ReqResType<T extends keyof responseOperations> = Required<
+  responseOperations[T]["responses"][200] extends {
     schema: infer S;
   }
     ? S
     : unknown
 >;
 // 请求的Data数据类型
-export type ReqDataType<T extends keyof operations> = ReqResType<T> extends {
+export type ReqDataType<T extends keyof responseOperations> = ReqResType<T> extends {
   data: infer D;
 }
   ? D
   : any;
 // 请求的参数类型
-export type ReqParamsType<T extends keyof operations> = operations[T] extends {
+export type ReqParamsType<T extends keyof requestOperations> = requestOperations[T] extends {
   parameters: infer P;
 }
   ? P extends {
