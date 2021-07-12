@@ -57,6 +57,8 @@ npx openapi-make
 }
 ```
 
+### 生成的 services 文件支持传入配置覆盖原有配置
+
 ### 建议搭配 tampermonkey 插件
 
 https://greasyfork.org/zh-CN/scripts/426942-swagger-umi-request-generate
