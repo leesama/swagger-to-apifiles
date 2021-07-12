@@ -39,7 +39,7 @@ export default async ({
   );
   // 生成工具泛型
   ejs.renderFile(
-    path.join(__dirname, "../templates/generateTypeBySwagger.json"),
+    path.join(__dirname, "../templates/type.ejs"),
     { data: dataMapping },
     function (err, str) {
       if (err) {
