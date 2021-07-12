@@ -35,7 +35,7 @@ export function ${methodName}(config:Record<string, any> = {}){
   return request<${typePrefix}ReqRes>(
     '${requestUrl}',
     {
-      method: 'GET'
+      method: 'GET',
       ...config
     }
   )
