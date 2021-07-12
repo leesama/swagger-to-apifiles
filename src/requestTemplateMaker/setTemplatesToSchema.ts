@@ -6,18 +6,18 @@ import getConfig from "../getConfig";
 import getHeadTempalte from "./headTempalte";
 
 const setTemplatesToSchema = (
+  urlPrefix: string,
   schema: Schema,
   serviceMap: Map<string, ServiceMapValue>
 ) => {
-  const { serviceFileDir } = getConfig();
-  const basePath = resolve(serviceFileDir);
   // 添加requestsTemplates到Map中
 
   let currentService: ServiceMapValue;
-  Object.keys(schema.paths).forEach((requestUrl) => {
-    const path = schema.paths[requestUrl];
-    const methodName = camelCase(requestUrl.replace(".json", ""));
+  Object.keys(schema.paths).forEach((url) => {
+    const path = schema.paths[url];
+    const methodName = camelCase(url.replace(".json", ""));
     const typePrefix = pascalCase(methodName);
+    const requestUrl = `${urlPrefix}${url}`;
     if (path.get) {
       const operationId = path.get.operationId;
       const description = path.get.summary;
@@ -31,11 +31,12 @@ const setTemplatesToSchema = (
 export type ${typePrefix}ReqRes= ReqResType<'${operationId}'>
 // 结果中的data类型
 export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
-export function ${methodName}(){
+export function ${methodName}(config:Record<string, any> = {}){
   return request<${typePrefix}ReqRes>(
     '${requestUrl}',
     {
       method: 'GET'
+      ...config
     }
   )
 }`;
@@ -48,12 +49,13 @@ export type ${typePrefix}ReqParams= ReqParamsType<'${operationId}'>
 export type ${typePrefix}ReqRes= ReqResType<'${operationId}'>
 // 结果中的data类型
 export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
-export function ${methodName}(params: ${typePrefix}ReqParams){
+export function ${methodName}(params: ${typePrefix}ReqParams,config:Record<string, any> = {}){
   return request<${typePrefix}ReqRes>(
     '${requestUrl}',
     {
       method: 'GET',
-      params
+      params,
+      ...config
     }
   )
 }`;
@@ -75,23 +77,21 @@ export type ${typePrefix}ReqParams= ReqParamsType<'${operationId}'>
 export type ${typePrefix}ReqRes= ReqResType<'${operationId}'>
 // 结果中的data类型
 export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
-export function ${methodName}(data: ${typePrefix}ReqParams){
+export function ${methodName}(data: ${typePrefix}ReqParams,config:Record<string, any> = {}){
   return request<${typePrefix}ReqRes>(
     '${requestUrl}',
     {
       method: 'POST',
       data,
-      requestType:'${requestType}'
+      requestType:'${requestType}',
+      ...config
     }
     )
   }`;
       currentService = serviceMap.get(path.post.tags![0])!;
       currentService.requestsTemplates.push(template);
     }
-    currentService.filePath = join(
-      basePath,
-      `${currentService.controllerShortName}.ts`
-    );
+    currentService.filePath = `${currentService.controllerShortName}.ts`;
 
     const descriptionTemplate = `
 // ${currentService.description}

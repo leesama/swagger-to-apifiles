@@ -35,30 +35,27 @@ npx openapi-make
 
 如果项目根目录没有配置文件,执行命令后会会生成一个`generateTypeBySwagger.json`的文件，内容如下：
 
-```json
+```js
 {
-  "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json",
-
-  "outDir": "./src/types/request.d.ts",
-  "serviceFileDir": "src/services"
+  "doc": "请参考README.md,https://github.com/leesama/openapi-generate-config#readme",
+  // 根据数组配置生成文件
+  "generateConfig": [
+    {
+      // 目录名
+      "dirName": "B",
+      // 请求url的前缀
+      "urlPrefix": "/api",
+      // 当后端返回值中数据字段不为data时,指定其字段名,用于工具泛型推导data的类型
+      "dataMapping": "result",
+      "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json"
+    },
+    {
+      "dirName": "A",
+      "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json"
+    }
+  ]
 }
 ```
-
-### 配置参数说明：
-
-### swaggerUrl
-
-swagger 链接
-
-### outDir
-
-输出的目录
-
-如果项目根目录有配置文件,直接读取配置文件内容并根据配置生成文件
-
-### swaggerUrl
-
-service 文件目录
 
 ### 建议搭配 tampermonkey 插件
 

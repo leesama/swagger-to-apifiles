@@ -1,4 +1,4 @@
-import path from "path";
+import path, { resolve } from "path";
 import { outputFileSync, readJsonSync, writeJsonSync } from "fs-extra";
 import { Schema } from "../data";
 import getSchemaMap from "./getSchemaMap";
@@ -8,17 +8,22 @@ import { log } from "../utils";
 
 /**
  * @description: 生成service请求文件
- * @param {Schema} schema
- * @return {*}
  */
-const makeServiceFile = (schema: Schema) => {
+const makeServiceFile = (
+  urlPrefix: string,
+  dirName: string,
+  schema: Schema
+) => {
   log.success("写入文件数据");
+  // 获取根据controller名字构建的map
   const serviceMap = getSchemaMap(schema);
-  setTemplatesToSchema(schema, serviceMap);
+  // 将模板内容写入到Map中
+  setTemplatesToSchema(urlPrefix, schema, serviceMap);
+  const basePath = path.join(resolve("src/services"), `${dirName}`);
   // 遍历Map 将数据写入到service文件中
   serviceMap.forEach((value) => {
     outputFileSync(
-      value.filePath,
+      `${basePath}/${value.filePath}`,
       value.beforeTemplate + value.requestsTemplates.join("")
     );
   });

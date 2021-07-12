@@ -1,11 +1,14 @@
 import fs from "fs-extra";
 import path from "path";
-import { log } from "../utils";
+import { hasDuplicates, log } from "../utils";
 
 export interface Config {
-  swaggerUrl: string;
-  outDir: string;
-  serviceFileDir: string;
+  generateConfig: {
+    dirName: string;
+    swaggerUrl: string;
+    dataMapping?: string | null;
+    urlPrefix?: string;
+  }[];
 }
 
 const configPath = path.resolve("generateTypeBySwagger.json");
@@ -17,6 +20,14 @@ const getConfig = () => {
       path.join(__dirname, "../templates/generateTypeBySwagger.json"),
       configPath
     );
+    process.exit(1);
+  }
+  const { generateConfig } = require(configPath) as Config;
+  const hasDuplicate = hasDuplicates(
+    generateConfig.map((generateConfigItem) => generateConfigItem.dirName)
+  );
+  if (hasDuplicate) {
+    log.error(`dirName不能重复,请重新填写配置`);
     process.exit(1);
   }
   return require(configPath) as Config;
