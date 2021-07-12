@@ -27,5 +27,5 @@ export type ReqParamsType<T extends keyof requestOperations> = requestOperations
         body: infer B;
       }
     ? B[keyof B]
-    : void
-  : void;
+    : undefined
+  : undefined;
