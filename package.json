@@ -1,6 +1,6 @@
 {
   "name": "openapi-generate-config",
-  "version": "3.3.7",
+  "version": "3.3.9",
   "description": "run openapi-typescript by config",
   "main": "dist/index.js",
   "bin": {

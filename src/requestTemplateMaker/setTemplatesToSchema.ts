@@ -86,8 +86,8 @@ export function ${methodName}(data: ${typePrefix}ReqParams,config:Record<string,
       requestType:'${requestType}',
       ...config
     }
-    )
-  }`;
+  )
+}`;
       currentService = serviceMap.get(path.post.tags![0])!;
       currentService.requestsTemplates.push(template);
     }
