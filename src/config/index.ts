@@ -3,6 +3,7 @@ import path from "path";
 import { hasDuplicates, log } from "../utils";
 
 export interface Config {
+  requestImportCode: string;
   generateConfig: {
     dirName: string;
     swaggerUrl: string;
@@ -32,4 +33,5 @@ const getConfig = () => {
   }
   return require(configPath) as Config;
 };
-export default getConfig;
+const config = getConfig();
+export default config;

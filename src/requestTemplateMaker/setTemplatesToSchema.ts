@@ -1,9 +1,7 @@
 import { camelCase } from "lodash";
-import { join, resolve } from "path";
-import pascalCase from "pascalcase";
 import { Schema, ServiceMapValue } from "../data";
-import getConfig from "../getConfig";
-import getHeadTempalte from "./headTempalte";
+import pascalCase from "pascalcase";
+import headTempalte from "./headTempalte";
 
 const setTemplatesToSchema = (
   urlPrefix: string,
@@ -15,75 +13,93 @@ const setTemplatesToSchema = (
   let currentService: ServiceMapValue;
   Object.keys(schema.paths).forEach((url) => {
     const path = schema.paths[url];
-    const methodName = camelCase(url.replace(".json", ""));
-    const typePrefix = pascalCase(methodName);
-    const requestUrl = `${urlPrefix}${url}`;
+    //请求函数名
+    const methodName = pascalCase(url.replace(".json", ""));
+    let requestUrl = `${urlPrefix}${url}`;
     if (path.get) {
-      const operationId = path.get.operationId;
       const description = path.get.summary;
-      // 是否有参数
-      const hasParam = path.get.parameters;
       let template = "";
-      if (!hasParam) {
+      const isRestful = requestUrl.includes("{");
+      if (isRestful) {
+        let param = "";
+        requestUrl = requestUrl.replace(/\{.*\}/, (match) => {
+          param = match.replace("{", "").replace("}", "");
+          return `$${match}`;
+        });
         template = `
 // ${description}
-// 结果类型
-export type ${typePrefix}ReqRes= ReqResType<'${operationId}'>
-// 结果中的data类型
-export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
-export function ${methodName}(config:Record<string, any> = {}){
-  return request<${typePrefix}ReqRes>(
-    '${requestUrl}',
+export function get${methodName}(${param},config = {}){
+  return request(
     {
+      url: \`${requestUrl}\`,
       method: 'GET',
       ...config
     }
   )
 }`;
       } else {
-        template = `
+        // 是否有参数
+        if (path.get.parameters) {
+          template = `
 // ${description}
-// 参数类型
-export type ${typePrefix}ReqParams= ReqParamsType<'${operationId}'>
-// 结果类型
-export type ${typePrefix}ReqRes= ReqResType<'${operationId}'>
-// 结果中的data类型
-export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
-export function ${methodName}(params: ${typePrefix}ReqParams,config:Record<string, any> = {}){
-  return request<${typePrefix}ReqRes>(
-    '${requestUrl}',
+export function get${methodName}(params,config = {}){
+  return request(
     {
+      url: '${requestUrl}',
       method: 'GET',
       params,
       ...config
     }
   )
 }`;
+        } else {
+          template = `
+// ${description}
+export function get${methodName}(config = {}){
+  return request(
+    {
+      url: '${requestUrl}',
+      method: 'GET',
+      ...config
+    }
+  )
+}`;
+        }
       }
       currentService = serviceMap.get(path.get.tags![0])!;
       currentService.requestsTemplates.push(template);
     }
-    if (path.post) {
-      const { operationId, summary: description } = path.post;
-      const requestType =
-        (path.post as any)?.consumes[0] === "application/json"
-          ? "json"
-          : "form";
+    if (path.delete) {
+      let param = "";
+      requestUrl = requestUrl.replace(/\{.*\}/, (match) => {
+        param = match.replace("{", "").replace("}", "");
+        return `$${match}`;
+      });
+      const description = path.delete.summary;
       const template = `
 // ${description}
-// 参数类型
-export type ${typePrefix}ReqParams= ReqParamsType<'${operationId}'>
-// 结果类型
-export type ${typePrefix}ReqRes= ReqResType<'${operationId}'>
-// 结果中的data类型
-export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
-export function ${methodName}(data: ${typePrefix}ReqParams,config:Record<string, any> = {}){
-  return request<${typePrefix}ReqRes>(
-    '${requestUrl}',
+export function delete${methodName}(${param},config = {}){
+  return request(
     {
+      url: \`${requestUrl}\`,
+      method: 'DELETE',
+      ...config
+    }
+  )
+}`;
+      currentService = serviceMap.get(path.delete.tags![0])!;
+      currentService.requestsTemplates.push(template);
+    }
+    if (path.post) {
+      const { summary: description } = path.post;
+      const template = `
+// ${description}
+export function post${methodName}(data,config = {}){
+  return request(
+    {
+      url: '${requestUrl}',
       method: 'POST',
       data,
-      requestType:'${requestType}',
       ...config
     }
   )
@@ -91,13 +107,29 @@ export function ${methodName}(data: ${typePrefix}ReqParams,config:Record<string,
       currentService = serviceMap.get(path.post.tags![0])!;
       currentService.requestsTemplates.push(template);
     }
-    currentService.filePath = `${currentService.controllerShortName}.ts`;
-
+    if (path.put) {
+      const { summary: description } = path.put;
+      const template = `
+// ${description}
+export function put${methodName}(data,config = {}){
+  return request(
+    {
+      url: '${requestUrl}',
+      method: 'PUT',
+      data,
+      ...config
+    }
+  )
+}`;
+      currentService = serviceMap.get(path.put.tags![0])!;
+      currentService.requestsTemplates.push(template);
+    }
+    currentService.filePath = `${currentService.controllerShortName}.js`;
     const descriptionTemplate = `
 // ${currentService.description}
 // ${currentService.name}
-        `;
-    currentService.beforeTemplate = descriptionTemplate + getHeadTempalte();
+`;
+    currentService.beforeTemplate = descriptionTemplate + headTempalte;
   });
 };
 export default setTemplatesToSchema;

@@ -1,16 +1,14 @@
-# openapi-generate-config
+# swagger-to-service-js
 
-根据 swagger api-doc 自动生成 typescript 类型文件、请求函数
+根据 swagger api-doc 自动生成 jsapi 文件、请求函数
 
 # 特性
 
 1. 根据 controller 自动生成请求文件目录
 2. 根据请求路径生成请求函数
-3. 自动生成工具泛型用于推导类型
-4. 可自定义配置类型、文件生成目录
-5. request 请求使用 umi-request 如果包中有 tarojs 请求库更换为项目内封装的请求工具
+3. 可自定义文件生成目录
 
-再也不必自己定义请求类型 请求方法
+再也不必自己定义请求方法 请求文件
 
 # Step 1
 
@@ -18,10 +16,10 @@
 
 ```bash
 # Yarn
-yarn add openapi-generate-config --dev
+yarn add swagger-to-service-js --dev
 
 # Npm
-npm install openapi-generate-config --save-dev
+npm install swagger-to-service-js --save-dev
 ```
 
 # Step 2
@@ -29,7 +27,7 @@ npm install openapi-generate-config --save-dev
 生成、读取文件
 
 ```bash
-npx openapi-make
+npx make-api
 
 ```
 
@@ -37,31 +35,30 @@ npx openapi-make
 
 ```js
 {
-  "doc": "请参考README.md,https://github.com/leesama/openapi-generate-config#readme",
+  "doc":"请参考README.md,https://www.npmjs.com/package/swagger-to-service-js",
+  "requestImportCode":"import request from '../utils/request';",
   // 根据数组配置生成文件
   "generateConfig": [
     {
       // 目录名
-      "dirName": "B",
+      "dirName": "api/generatedByswagger",
       // 请求url的前缀
       "urlPrefix": "/api",
-      // 当后端返回值中数据字段不为data时,指定其字段名,用于工具泛型推导data的类型
-      "dataMapping": "result",
       "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json"
     },
-    {
-      "dirName": "A",
+   {
+      "dirName": "api/generatedByswagger1",
       "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json"
-    }
+    },
   ]
 }
 ```
 
-### 生成的 services 文件支持传入配置覆盖原有配置
+### 生成的 api 文件支持传入配置覆盖原有配置
 
 ### 建议搭配 tampermonkey 插件
 
-https://greasyfork.org/zh-CN/scripts/426942-swagger-umi-request-generate
+https://greasyfork.org/zh-CN/scripts/435022-copy-method-swagger-to-service-js
 
 可直接复制请求函数名
 

@@ -19,13 +19,16 @@ const makeServiceFile = (
   const serviceMap = getSchemaMap(schema);
   // 将模板内容写入到Map中
   setTemplatesToSchema(urlPrefix, schema, serviceMap);
-  const basePath = path.join(resolve("src/services"), `${dirName}`);
+  const basePath = path.join(resolve("src"), `${dirName}`);
+
   // 遍历Map 将数据写入到service文件中
   serviceMap.forEach((value) => {
-    outputFileSync(
-      `${basePath}/${value.filePath}`,
-      value.beforeTemplate + value.requestsTemplates.join("")
-    );
+    if (value.filePath) {
+      outputFileSync(
+        `${basePath}\\${value.filePath}`,
+        value.beforeTemplate + value.requestsTemplates.join("")
+      );
+    }
   });
   log.success("文件写入成功");
 };

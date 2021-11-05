@@ -1,12 +1,13 @@
 {
-  "doc":"请参考README.md,https://github.com/leesama/openapi-generate-config#readme",
+  "doc":"请参考README.md,https://www.npmjs.com/package/swagger-to-service-js",
+  "requestImportCode":"import request from '../utils/request';",
   "generateConfig": [
     {
-      "dirName": "petstore",
+      "dirName": "api/generatedByswagger",
       "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json"
     },
     {
-      "dirName": "petstore",
+      "dirName": "api/generatedByswagger2",
       "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json"
     }
   ]

@@ -1,26 +1,9 @@
-import { readJSONSync } from "fs-extra";
-import path from "path";
+import config from "../config";
 // 文件的头部模板
 const getHeadTempalte = () => {
-  const packageInfo = readJSONSync(path.resolve("./package.json"));
-  const commonHead = `
-import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
-  `;
-  let headTempalte = `
-import { request } from 'umi';
-  `;
-  if (packageInfo.dependencies) {
-    const isTaro = Object.keys(packageInfo.dependencies).find((i) =>
-      i.includes("@tarojs")
-    );
-    if (isTaro) {
-      headTempalte = `
-import request from "@/utils/request";
-  `;
-    }
-  }
-
-  return headTempalte + commonHead;
+  const { requestImportCode } = config;
+  return requestImportCode;
 };
+const headTempalte = getHeadTempalte();
 
-export default getHeadTempalte;
+export default headTempalte;

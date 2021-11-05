@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import getConfig from "./getConfig";
+import config from "./config";
 import makeFiles from "./makeFiles";
 async function main() {
   try {
-    const { generateConfig } = getConfig();
+    const { generateConfig } = config;
     generateConfig.forEach(async (generateConfigItem) => {
       await makeFiles(generateConfigItem);
     });
