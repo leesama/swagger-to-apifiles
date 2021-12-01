@@ -73,7 +73,7 @@ export function get${methodName}(config = {}){
       let param = "";
       requestUrl = requestUrl.replace(/\{.*\}/, (match) => {
         param = match.replace("{", "").replace("}", "");
-        return `$${match}`;
+        return `${match}`;
       });
       const description = path.delete.summary;
       const template = `
