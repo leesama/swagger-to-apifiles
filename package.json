@@ -1,7 +1,7 @@
 {
-  "name": "swagger-to-service-js",
+  "name": "swagger-to-service",
   "author": "leesher",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "make api files by swagger",
   "main": "dist/index.js",
   "bin": {
@@ -18,7 +18,8 @@
   "nodemonConfig": {
     "ignore": [
       "src/types/*",
-      "src/services/*"
+      "src/services/*",
+      "src/api/*"
     ]
   },
   "scripts": {
@@ -33,7 +34,6 @@
     "type": "git",
     "url": "git+https://github.com/leesama/openapi-generate-config.git"
   },
-
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/leesama/openapi-generate-config/issues"
