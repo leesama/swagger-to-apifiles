@@ -1,8 +1,12 @@
-import { camelCase } from "lodash";
 import { Schema, ServiceMapValue } from "../data";
 import pascalCase from "pascalcase";
-import headTempalte from "./headTempalte";
 
+import { headTempalte } from "./headTempalte";
+import { PathItemObject } from "openapi-typescript";
+const getOperationIdAndDescription = (path: PathItemObject) => {
+  const { operationId, summary: description } = Object.values(path)[0];
+  return { operationId, description };
+};
 const setTemplatesToSchema = (
   urlPrefix: string,
   schema: Schema,
@@ -15,10 +19,20 @@ const setTemplatesToSchema = (
     const path = schema.paths[url];
     //请求函数名
     const methodName = pascalCase(url.replace(".json", ""));
+    const typePrefix = pascalCase(methodName);
+    const { operationId, description } = getOperationIdAndDescription(path);
+    let template = "";
+    let typeTemplate = `
+// ${description}
+// 参数类型
+export type ${typePrefix}ReqParams= ReqParamsType<'${operationId}'>
+// 结果类型
+export type ${typePrefix}ReqRes= ReqResType<'${operationId}'>
+// 结果中的data类型
+export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
+    `;
     let requestUrl = `${urlPrefix}${url}`;
     if (path.get) {
-      const description = path.get.summary;
-      let template = "";
       const isRestful = requestUrl.includes("{");
       if (isRestful) {
         let param = "";
@@ -66,8 +80,12 @@ export function get${methodName}(config = {}){
 }`;
         }
       }
+      typeTemplate =
+        typeTemplate +
+        `
+export function get${methodName}(params: ${typePrefix}ReqParams, config?: any): ${typePrefix}ReqRes
+`;
       currentService = serviceMap.get(path.get.tags![0])!;
-      currentService.requestsTemplates.push(template);
     }
     if (path.delete) {
       let param = "";
@@ -75,8 +93,7 @@ export function get${methodName}(config = {}){
         param = match.replace("{", "").replace("}", "");
         return `${match}`;
       });
-      const description = path.delete.summary;
-      const template = `
+      template = `
 // ${description}
 export function delete${methodName}(${param},config = {}){
   return request(
@@ -88,11 +105,14 @@ export function delete${methodName}(${param},config = {}){
   )
 }`;
       currentService = serviceMap.get(path.delete.tags![0])!;
-      currentService.requestsTemplates.push(template);
+      typeTemplate =
+        typeTemplate +
+        `
+export function delete${methodName}(params: ${typePrefix}ReqParams, config?: any): ${typePrefix}ReqRes
+`;
     }
     if (path.post) {
-      const { summary: description } = path.post;
-      const template = `
+      template = `
 // ${description}
 export function post${methodName}(data,config = {}){
   return request(
@@ -105,11 +125,14 @@ export function post${methodName}(data,config = {}){
   )
 }`;
       currentService = serviceMap.get(path.post.tags![0])!;
-      currentService.requestsTemplates.push(template);
+      typeTemplate =
+        typeTemplate +
+        `
+export function post${methodName}(params: ${typePrefix}ReqParams, config?: any): ${typePrefix}ReqRes
+`;
     }
     if (path.put) {
-      const { summary: description } = path.put;
-      const template = `
+      template = `
 // ${description}
 export function put${methodName}(data,config = {}){
   return request(
@@ -122,9 +145,15 @@ export function put${methodName}(data,config = {}){
   )
 }`;
       currentService = serviceMap.get(path.put.tags![0])!;
-      currentService.requestsTemplates.push(template);
+      typeTemplate =
+        typeTemplate +
+        `
+export function put${methodName}(params: ${typePrefix}ReqParams, config?: any): ${typePrefix}ReqRes
+`;
     }
-    currentService.filePath = `${currentService.controllerShortName}.js`;
+    currentService.requestsTemplates.push(template);
+    currentService.typeTemplates.push(typeTemplate);
+    currentService.fileName = currentService.controllerShortName;
     const descriptionTemplate = `
 // ${currentService.description}
 // ${currentService.name}

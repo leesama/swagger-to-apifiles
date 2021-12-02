@@ -1,9 +1,9 @@
 import config from "../config";
-// 文件的头部模板
-const getHeadTempalte = () => {
-  const { requestImportCode } = config;
-  return requestImportCode;
-};
-const headTempalte = getHeadTempalte();
 
-export default headTempalte;
+// 文件的头部模板
+const headTempalte = config.requestImportCode;
+// 类型文件的头部模板
+const typeHeadTemplate = `
+import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
+  `;
+export { headTempalte, typeHeadTemplate };

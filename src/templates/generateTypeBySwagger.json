@@ -1,14 +1,17 @@
 {
-  "doc":"请参考README.md,https://www.npmjs.com/package/swagger-to-service-js",
-  "requestImportCode":"import request from '../utils/request';",
-  "generateConfig": [
-    {
-      "dirName": "api/generatedByswagger",
-      "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json"
-    },
-    {
-      "dirName": "api/generatedByswagger2",
-      "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json"
-    }
-  ]
+  "doc": "请参考README.md,https://www.npmjs.com/package/swagger-to-service-js",
+  "requestImportCode": "import request from '../utils/request';",
+  "generateConfig": {
+    "dirName": "api",
+    "files": [
+      {
+        "dirName": "generatedByswagger",
+        "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json"
+      },
+      {
+        "dirName": "generatedByswagger2",
+        "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json"
+      }
+    ]
+  }
 }

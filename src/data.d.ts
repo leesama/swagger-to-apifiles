@@ -16,10 +16,12 @@ export type ServiceMapValue = {
   description: string;
   // controller简写名 用于service文件名
   controllerShortName: string;
-  filePath: string;
+  fileName: string;
   beforeTemplate: string;
   // 请求的模板
   requestsTemplates: string[];
+  // 类型模板
+  typeTemplates: string[];
 };
 
 export type ServiceMapType = Map<string, ServiceMapValue>;

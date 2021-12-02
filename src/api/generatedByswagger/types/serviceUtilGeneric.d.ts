@@ -11,7 +11,7 @@ export type ReqResType<T extends keyof responseOperations> = Required<
 >;
 // 请求的Data数据类型
 export type ReqDataType<T extends keyof responseOperations> = ReqResType<T> extends {
-  <%-data%>: infer D;
+  context: infer D;
 }
   ? D
   : any;

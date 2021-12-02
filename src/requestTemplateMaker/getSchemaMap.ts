@@ -15,9 +15,10 @@ const getSchemaMap = (schema: Schema) => {
     }
     serviceMap.set(s.name, {
       ...s,
-      filePath: "",
+      fileName: "",
       beforeTemplate: "",
       controllerShortName,
+      typeTemplates: [],
       requestsTemplates: [],
     });
   });
