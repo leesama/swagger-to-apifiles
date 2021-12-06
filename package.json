@@ -1,7 +1,7 @@
 {
   "name": "swagger-to-apifiles",
   "author": "leesher",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "make api files by swagger",
   "main": "dist/index.js",
   "bin": {
