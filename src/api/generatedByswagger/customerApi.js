@@ -158,12 +158,24 @@ export function postCustomerExcelB2b(data,config = {}){
     }
   )
 }
-// Upload excel history list
+// Upload excel history list b2b
 
-export function getCustomerExcelHistory(params,config = {}){
+export function getCustomerExcelHistoryB2b(params,config = {}){
   return request(
     {
-      url: `/customer/excel-history`,
+      url: `/customer/excel-history-b2b`,
+      method: 'GET',
+      params,
+      ...config
+    }
+  )
+}
+// Upload excel history list b2c
+
+export function getCustomerExcelHistoryB2c(params,config = {}){
+  return request(
+    {
+      url: `/customer/excel-history-b2c`,
       method: 'GET',
       params,
       ...config

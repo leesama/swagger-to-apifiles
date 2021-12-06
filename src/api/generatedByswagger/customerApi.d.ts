@@ -106,12 +106,20 @@ export type PostCustomerExcelB2bReqData= ReqDataType<'customerB2BExcelUsingPOST'
 export function postCustomerExcelB2b(params: PostCustomerExcelB2bReqParams, config?: any): PostCustomerExcelB2bReqRes
 
 // 参数类型
-export type GetCustomerExcelHistoryReqParams= ReqParamsType<'findHistoryPageUsingGET'>
+export type GetCustomerExcelHistoryB2bReqParams= ReqParamsType<'findHistoryPageB2BUsingGET'>
 // 结果类型
-export type GetCustomerExcelHistoryReqRes= ReqResType<'findHistoryPageUsingGET'>
+export type GetCustomerExcelHistoryB2bReqRes= ReqResType<'findHistoryPageB2BUsingGET'>
 // 结果中的data类型
-export type GetCustomerExcelHistoryReqData= ReqDataType<'findHistoryPageUsingGET'>
-export function getCustomerExcelHistory(params: GetCustomerExcelHistoryReqParams, config?: any): GetCustomerExcelHistoryReqRes
+export type GetCustomerExcelHistoryB2bReqData= ReqDataType<'findHistoryPageB2BUsingGET'>
+export function getCustomerExcelHistoryB2b(params: GetCustomerExcelHistoryB2bReqParams, config?: any): GetCustomerExcelHistoryB2bReqRes
+
+// 参数类型
+export type GetCustomerExcelHistoryB2cReqParams= ReqParamsType<'findHistoryPageUsingGET'>
+// 结果类型
+export type GetCustomerExcelHistoryB2cReqRes= ReqResType<'findHistoryPageUsingGET'>
+// 结果中的data类型
+export type GetCustomerExcelHistoryB2cReqData= ReqDataType<'findHistoryPageUsingGET'>
+export function getCustomerExcelHistoryB2c(params: GetCustomerExcelHistoryB2cReqParams, config?: any): GetCustomerExcelHistoryB2cReqRes
 
 // 参数类型
 export type GetCustomerExcelTemplateReqParams= ReqParamsType<'exportTemplateB2CUsingGET'>

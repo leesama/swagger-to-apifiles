@@ -92,7 +92,10 @@ export interface paths {
   "/customer/excel-b2b": {
     post: operations["customerB2BExcelUsingPOST"];
   };
-  "/customer/excel-history": {
+  "/customer/excel-history-b2b": {
+    get: operations["findHistoryPageB2BUsingGET"];
+  };
+  "/customer/excel-history-b2c": {
     get: operations["findHistoryPageUsingGET"];
   };
   "/customer/excel-template": {
@@ -2292,8 +2295,9 @@ export interface definitions {
      * * OTHER: 0:other
      * * PET: 1:pet
      * * CUSTOMER: 2:customer
+     * * B2B: 3:b2c
      */
-    type?: 0 | 1 | 2;
+    type?: 0 | 1 | 2 | 3;
     /** history file */
     upLoadTime?: string;
   };
@@ -5689,6 +5693,49 @@ export interface operations {
       404: unknown;
     };
   };
+  findHistoryPageB2BUsingGET: {
+    parameters: {
+      query: {
+        /** page */
+        pageNum?: number;
+        "pageRequest.offset"?: number;
+        "pageRequest.pageNumber"?: number;
+        "pageRequest.pageSize"?: number;
+        "pageRequest.sort.sorted"?: boolean;
+        "pageRequest.sort.unsorted"?: boolean;
+        /** size */
+        pageSize?: number;
+        "pageable.offset"?: number;
+        "pageable.pageNumber"?: number;
+        "pageable.pageSize"?: number;
+        "pageable.sort.sorted"?: boolean;
+        "pageable.sort.unsorted"?: boolean;
+        "sort.sorted"?: boolean;
+        "sort.unsorted"?: boolean;
+        /** sort */
+        sortColumn?: string;
+        /** sort rule desc or asc */
+        sortRole?: string;
+        /** sort type */
+        sortType?: string;
+        type?: "OTHER" | "PET" | "CUSTOMER" | "B2B";
+        /** login user Id */
+        userId?: string;
+      };
+    };
+    responses: {
+      /** OK */
+      200: {
+        schema: definitions["BaseResponse«CustomerExcelHistoryPageResponse»"];
+      };
+      /** Unauthorized */
+      401: unknown;
+      /** Forbidden */
+      403: unknown;
+      /** Not Found */
+      404: unknown;
+    };
+  };
   findHistoryPageUsingGET: {
     parameters: {
       query: {
@@ -5714,6 +5761,7 @@ export interface operations {
         sortRole?: string;
         /** sort type */
         sortType?: string;
+        type?: "OTHER" | "PET" | "CUSTOMER" | "B2B";
         /** login user Id */
         userId?: string;
       };

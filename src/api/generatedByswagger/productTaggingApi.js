@@ -28,11 +28,12 @@ export function putProductTagging(data,config = {}){
 }
 // Delete product tagging
 
-export function deleteProductTagging(,config = {}){
+export function deleteProductTagging(data,config = {}){
   return request(
     {
       url: `/product/tagging`,
       method: 'DELETE',
+      data,
       ...config
     }
   )

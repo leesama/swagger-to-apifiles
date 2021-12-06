@@ -28,11 +28,12 @@ export function putPartnerRelationshipSync(data,config = {}){
 }
 // Delete partner relationship
 
-export function deletePartnerRelationshipSync(,config = {}){
+export function deletePartnerRelationshipSync(data,config = {}){
   return request(
     {
       url: `/partner-relationship/sync`,
       method: 'DELETE',
+      data,
       ...config
     }
   )

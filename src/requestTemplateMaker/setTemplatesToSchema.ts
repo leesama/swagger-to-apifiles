@@ -84,12 +84,14 @@ export function get${methodName}(config = {}){
     }
   }
   if (method === "delete") {
-    let param = "";
-    requestUrl = requestUrl.replace(/\{.*\}/, (match) => {
-      param = match.replace("{", "").replace("}", "");
-      return `$${match}`;
-    });
-    template += `
+    // 如果是restRul get
+    if (requestUrl.includes("{")) {
+      let param = "";
+      requestUrl = requestUrl.replace(/\{.*\}/, (match) => {
+        param = match.replace("{", "").replace("}", "");
+        return `$${match}`;
+      });
+      template += `
 export function delete${methodName}(${param},config = {}){
   return request(
     {
@@ -99,6 +101,31 @@ export function delete${methodName}(${param},config = {}){
     }
   )
 }`;
+    } else if (pathObj.parameters) {
+      // 如果有参数
+      template += `
+export function delete${methodName}(data,config = {}){
+  return request(
+    {
+      url: \`${requestUrl}\`,
+      method: 'DELETE',
+      data,
+      ...config
+    }
+  )
+}`;
+    } else {
+      template += `
+export function delete${methodName}(config = {}){
+  return request(
+    {
+      url: \`${requestUrl}\`,
+      method: 'DELETE',
+      ...config
+    }
+  )
+}`;
+    }
   }
   if (method === "post") {
     template += `
