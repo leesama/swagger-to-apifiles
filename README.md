@@ -16,10 +16,10 @@
 
 ```bash
 # Yarn
-yarn add swagger-to-service-js --dev
+yarn add swagger-to-apifiles --dev
 
 # Npm
-npm install swagger-to-service-js --save-dev
+npm install swagger-to-apifiles --save-dev
 ```
 
 # Step 2
@@ -35,7 +35,7 @@ npx make-api
 
 ```js
 {
-  "doc":"请参考README.md,https://www.npmjs.com/package/swagger-to-service-js",
+  "doc":"请参考README.md,https://www.npmjs.com/package/swagger-to-apifiles",
   "requestImportCode":"import request from '../utils/request';",
   // 根据数组配置生成文件
   "generateConfig": [
