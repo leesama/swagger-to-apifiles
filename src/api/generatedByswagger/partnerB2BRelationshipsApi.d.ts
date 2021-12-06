@@ -1,66 +1,66 @@
 
 import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
   
-// Add partner b2b relationships
 // 参数类型
-export type PartnerRelationshipB2bReqParams= ReqParamsType<'addUsingPOST_5'>
+export type PostPartnerRelationshipB2bReqParams= ReqParamsType<'addUsingPOST_5'>
 // 结果类型
-export type PartnerRelationshipB2bReqRes= ReqResType<'addUsingPOST_5'>
+export type PostPartnerRelationshipB2bReqRes= ReqResType<'addUsingPOST_5'>
 // 结果中的data类型
-export type PartnerRelationshipB2bReqData= ReqDataType<'addUsingPOST_5'>
-    
-export function postPartnerRelationshipB2b(params: PartnerRelationshipB2bReqParams, config?: any): PartnerRelationshipB2bReqRes
+export type PostPartnerRelationshipB2bReqData= ReqDataType<'addUsingPOST_5'>
+export function postPartnerRelationshipB2b(params: PostPartnerRelationshipB2bReqParams, config?: any): PostPartnerRelationshipB2bReqRes
 
-export function putPartnerRelationshipB2b(params: PartnerRelationshipB2bReqParams, config?: any): PartnerRelationshipB2bReqRes
-
-// Partner b2b relationships contact list
 // 参数类型
-export type PartnerRelationshipB2bContactsReqParams= ReqParamsType<'contactUsingGET'>
+export type PutPartnerRelationshipB2bReqParams= ReqParamsType<'updateUsingPUT_2'>
 // 结果类型
-export type PartnerRelationshipB2bContactsReqRes= ReqResType<'contactUsingGET'>
+export type PutPartnerRelationshipB2bReqRes= ReqResType<'updateUsingPUT_2'>
 // 结果中的data类型
-export type PartnerRelationshipB2bContactsReqData= ReqDataType<'contactUsingGET'>
-    
-export function getPartnerRelationshipB2bContacts(params: PartnerRelationshipB2bContactsReqParams, config?: any): PartnerRelationshipB2bContactsReqRes
+export type PutPartnerRelationshipB2bReqData= ReqDataType<'updateUsingPUT_2'>
+export function putPartnerRelationshipB2b(params: PutPartnerRelationshipB2bReqParams, config?: any): PutPartnerRelationshipB2bReqRes
 
-// updatePrimaryContact
 // 参数类型
-export type PartnerRelationshipB2bPrimaryContactReqParams= ReqParamsType<'updatePrimaryContactUsingPUT'>
+export type GetPartnerRelationshipB2bContactsReqParams= ReqParamsType<'contactUsingGET'>
 // 结果类型
-export type PartnerRelationshipB2bPrimaryContactReqRes= ReqResType<'updatePrimaryContactUsingPUT'>
+export type GetPartnerRelationshipB2bContactsReqRes= ReqResType<'contactUsingGET'>
 // 结果中的data类型
-export type PartnerRelationshipB2bPrimaryContactReqData= ReqDataType<'updatePrimaryContactUsingPUT'>
-    
-export function putPartnerRelationshipB2bPrimaryContact(params: PartnerRelationshipB2bPrimaryContactReqParams, config?: any): PartnerRelationshipB2bPrimaryContactReqRes
+export type GetPartnerRelationshipB2bContactsReqData= ReqDataType<'contactUsingGET'>
+export function getPartnerRelationshipB2bContacts(params: GetPartnerRelationshipB2bContactsReqParams, config?: any): GetPartnerRelationshipB2bContactsReqRes
 
-// roles
 // 参数类型
-export type PartnerRelationshipB2bRolesReqParams= ReqParamsType<'rolesUsingGET'>
+export type PutPartnerRelationshipB2bPrimaryContactReqParams= ReqParamsType<'updatePrimaryContactUsingPUT'>
 // 结果类型
-export type PartnerRelationshipB2bRolesReqRes= ReqResType<'rolesUsingGET'>
+export type PutPartnerRelationshipB2bPrimaryContactReqRes= ReqResType<'updatePrimaryContactUsingPUT'>
 // 结果中的data类型
-export type PartnerRelationshipB2bRolesReqData= ReqDataType<'rolesUsingGET'>
-    
-export function getPartnerRelationshipB2bRoles(params: PartnerRelationshipB2bRolesReqParams, config?: any): PartnerRelationshipB2bRolesReqRes
+export type PutPartnerRelationshipB2bPrimaryContactReqData= ReqDataType<'updatePrimaryContactUsingPUT'>
+export function putPartnerRelationshipB2bPrimaryContact(params: PutPartnerRelationshipB2bPrimaryContactReqParams, config?: any): PutPartnerRelationshipB2bPrimaryContactReqRes
 
-// Partner b2b relationships detail
 // 参数类型
-export type PartnerRelationshipB2bIdReqParams= ReqParamsType<'findByIdUsingGET_4'>
+export type GetPartnerRelationshipB2bRolesReqParams= ReqParamsType<'rolesUsingGET'>
 // 结果类型
-export type PartnerRelationshipB2bIdReqRes= ReqResType<'findByIdUsingGET_4'>
+export type GetPartnerRelationshipB2bRolesReqRes= ReqResType<'rolesUsingGET'>
 // 结果中的data类型
-export type PartnerRelationshipB2bIdReqData= ReqDataType<'findByIdUsingGET_4'>
-    
-export function getPartnerRelationshipB2bId(params: PartnerRelationshipB2bIdReqParams, config?: any): PartnerRelationshipB2bIdReqRes
+export type GetPartnerRelationshipB2bRolesReqData= ReqDataType<'rolesUsingGET'>
+export function getPartnerRelationshipB2bRoles(params: GetPartnerRelationshipB2bRolesReqParams, config?: any): GetPartnerRelationshipB2bRolesReqRes
 
-export function deletePartnerRelationshipB2bId(params: PartnerRelationshipB2bIdReqParams, config?: any): PartnerRelationshipB2bIdReqRes
-
-// Partner b2b relationships page list
 // 参数类型
-export type PartnerRelationshipB2bsReqParams= ReqParamsType<'pageUsingGET_4'>
+export type GetPartnerRelationshipB2bIdReqParams= ReqParamsType<'findByIdUsingGET_4'>
 // 结果类型
-export type PartnerRelationshipB2bsReqRes= ReqResType<'pageUsingGET_4'>
+export type GetPartnerRelationshipB2bIdReqRes= ReqResType<'findByIdUsingGET_4'>
 // 结果中的data类型
-export type PartnerRelationshipB2bsReqData= ReqDataType<'pageUsingGET_4'>
-    
-export function getPartnerRelationshipB2bs(params: PartnerRelationshipB2bsReqParams, config?: any): PartnerRelationshipB2bsReqRes
+export type GetPartnerRelationshipB2bIdReqData= ReqDataType<'findByIdUsingGET_4'>
+export function getPartnerRelationshipB2bId(params: GetPartnerRelationshipB2bIdReqParams, config?: any): GetPartnerRelationshipB2bIdReqRes
+
+// 参数类型
+export type DeletePartnerRelationshipB2bIdReqParams= ReqParamsType<'deleteUsingDELETE_5'>
+// 结果类型
+export type DeletePartnerRelationshipB2bIdReqRes= ReqResType<'deleteUsingDELETE_5'>
+// 结果中的data类型
+export type DeletePartnerRelationshipB2bIdReqData= ReqDataType<'deleteUsingDELETE_5'>
+export function deletePartnerRelationshipB2bId(params: DeletePartnerRelationshipB2bIdReqParams, config?: any): DeletePartnerRelationshipB2bIdReqRes
+
+// 参数类型
+export type GetPartnerRelationshipB2bsReqParams= ReqParamsType<'pageUsingGET_4'>
+// 结果类型
+export type GetPartnerRelationshipB2bsReqRes= ReqResType<'pageUsingGET_4'>
+// 结果中的data类型
+export type GetPartnerRelationshipB2bsReqData= ReqDataType<'pageUsingGET_4'>
+export function getPartnerRelationshipB2bs(params: GetPartnerRelationshipB2bsReqParams, config?: any): GetPartnerRelationshipB2bsReqRes

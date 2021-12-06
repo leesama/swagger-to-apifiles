@@ -1,12 +1,25 @@
 
 // Partner b2c relationships api
 // Partner b2c relationships
-import request from '../utils/request';
+import request from '../../utils/request';
 // Add partner b2c relationships
+
+export function postPartnerRelationshipB2c(data,config = {}){
+  return request(
+    {
+      url: `/partner-relationship-b2c`,
+      method: 'POST',
+      data,
+      ...config
+    }
+  )
+}
+// update
+
 export function putPartnerRelationshipB2c(data,config = {}){
   return request(
     {
-      url: '/partner-relationship-b2c',
+      url: `/partner-relationship-b2c`,
       method: 'PUT',
       data,
       ...config
@@ -14,10 +27,11 @@ export function putPartnerRelationshipB2c(data,config = {}){
   )
 }
 // Partner b2c relationships contact list
+
 export function getPartnerRelationshipB2cContacts(params,config = {}){
   return request(
     {
-      url: '/partner-relationship-b2c/contacts',
+      url: `/partner-relationship-b2c/contacts`,
       method: 'GET',
       params,
       ...config
@@ -25,6 +39,18 @@ export function getPartnerRelationshipB2cContacts(params,config = {}){
   )
 }
 // Partner b2c relationships detail
+
+export function getPartnerRelationshipB2cId(id,config = {}){
+  return request(
+    {
+      url: `/partner-relationship-b2c/${id}`,
+      method: 'GET',
+      ...config
+    }
+  )
+}
+// Delete b2c relationships
+
 export function deletePartnerRelationshipB2cId(id,config = {}){
   return request(
     {
@@ -35,10 +61,11 @@ export function deletePartnerRelationshipB2cId(id,config = {}){
   )
 }
 // Partner b2c relationships page list
+
 export function getPartnerRelationshipB2cs(params,config = {}){
   return request(
     {
-      url: '/partner-relationship-b2cs',
+      url: `/partner-relationship-b2cs`,
       method: 'GET',
       params,
       ...config

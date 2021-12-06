@@ -1,198 +1,178 @@
 
 import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
   
-// Add club segment relation
 // 参数类型
-export type ClubSegmentRelationReqParams= ReqParamsType<'saveClubSegmentRelationUsingPOST'>
+export type PostClubSegmentRelationReqParams= ReqParamsType<'saveClubSegmentRelationUsingPOST'>
 // 结果类型
-export type ClubSegmentRelationReqRes= ReqResType<'saveClubSegmentRelationUsingPOST'>
+export type PostClubSegmentRelationReqRes= ReqResType<'saveClubSegmentRelationUsingPOST'>
 // 结果中的data类型
-export type ClubSegmentRelationReqData= ReqDataType<'saveClubSegmentRelationUsingPOST'>
-    
-export function postClubSegmentRelation(params: ClubSegmentRelationReqParams, config?: any): ClubSegmentRelationReqRes
+export type PostClubSegmentRelationReqData= ReqDataType<'saveClubSegmentRelationUsingPOST'>
+export function postClubSegmentRelation(params: PostClubSegmentRelationReqParams, config?: any): PostClubSegmentRelationReqRes
 
-// Edit customer detail
 // 参数类型
-export type CustomerReqParams= ReqParamsType<'editCustomerUsingPUT'>
+export type PutCustomerReqParams= ReqParamsType<'editCustomerUsingPUT'>
 // 结果类型
-export type CustomerReqRes= ReqResType<'editCustomerUsingPUT'>
+export type PutCustomerReqRes= ReqResType<'editCustomerUsingPUT'>
 // 结果中的data类型
-export type CustomerReqData= ReqDataType<'editCustomerUsingPUT'>
-    
-export function putCustomer(params: CustomerReqParams, config?: any): CustomerReqRes
+export type PutCustomerReqData= ReqDataType<'editCustomerUsingPUT'>
+export function putCustomer(params: PutCustomerReqParams, config?: any): PutCustomerReqRes
 
-// Customer coached segment detail
 // 参数类型
-export type CustomerCoachedSegmentReqParams= ReqParamsType<'customerCoachedSegmentUsingGET'>
+export type GetCustomerCoachedSegmentReqParams= ReqParamsType<'customerCoachedSegmentUsingGET'>
 // 结果类型
-export type CustomerCoachedSegmentReqRes= ReqResType<'customerCoachedSegmentUsingGET'>
+export type GetCustomerCoachedSegmentReqRes= ReqResType<'customerCoachedSegmentUsingGET'>
 // 结果中的data类型
-export type CustomerCoachedSegmentReqData= ReqDataType<'customerCoachedSegmentUsingGET'>
-    
-export function getCustomerCoachedSegment(params: CustomerCoachedSegmentReqParams, config?: any): CustomerCoachedSegmentReqRes
+export type GetCustomerCoachedSegmentReqData= ReqDataType<'customerCoachedSegmentUsingGET'>
+export function getCustomerCoachedSegment(params: GetCustomerCoachedSegmentReqParams, config?: any): GetCustomerCoachedSegmentReqRes
 
-// Customer feedback detail
 // 参数类型
-export type CustomerFeedbackReqParams= ReqParamsType<'customerFeedbackUsingGET'>
+export type GetCustomerFeedbackReqParams= ReqParamsType<'customerFeedbackUsingGET'>
 // 结果类型
-export type CustomerFeedbackReqRes= ReqResType<'customerFeedbackUsingGET'>
+export type GetCustomerFeedbackReqRes= ReqResType<'customerFeedbackUsingGET'>
 // 结果中的data类型
-export type CustomerFeedbackReqData= ReqDataType<'customerFeedbackUsingGET'>
-    
-export function getCustomerFeedback(params: CustomerFeedbackReqParams, config?: any): CustomerFeedbackReqRes
+export type GetCustomerFeedbackReqData= ReqDataType<'customerFeedbackUsingGET'>
+export function getCustomerFeedback(params: GetCustomerFeedbackReqParams, config?: any): GetCustomerFeedbackReqRes
 
-export function putCustomerFeedback(params: CustomerFeedbackReqParams, config?: any): CustomerFeedbackReqRes
-
-// Customer legal detail
 // 参数类型
-export type CustomerLegalReqParams= ReqParamsType<'findAllLegalByCustomerIdUsingGET'>
+export type PutCustomerFeedbackReqParams= ReqParamsType<'alterFeedBackUsingPUT'>
 // 结果类型
-export type CustomerLegalReqRes= ReqResType<'findAllLegalByCustomerIdUsingGET'>
+export type PutCustomerFeedbackReqRes= ReqResType<'alterFeedBackUsingPUT'>
 // 结果中的data类型
-export type CustomerLegalReqData= ReqDataType<'findAllLegalByCustomerIdUsingGET'>
-    
-export function getCustomerLegal(params: CustomerLegalReqParams, config?: any): CustomerLegalReqRes
+export type PutCustomerFeedbackReqData= ReqDataType<'alterFeedBackUsingPUT'>
+export function putCustomerFeedback(params: PutCustomerFeedbackReqParams, config?: any): PutCustomerFeedbackReqRes
 
-// Customer segment detail
 // 参数类型
-export type CustomerSegmentReqParams= ReqParamsType<'customerSegmentUsingGET'>
+export type GetCustomerLegalReqParams= ReqParamsType<'findAllLegalByCustomerIdUsingGET'>
 // 结果类型
-export type CustomerSegmentReqRes= ReqResType<'customerSegmentUsingGET'>
+export type GetCustomerLegalReqRes= ReqResType<'findAllLegalByCustomerIdUsingGET'>
 // 结果中的data类型
-export type CustomerSegmentReqData= ReqDataType<'customerSegmentUsingGET'>
-    
-export function getCustomerSegment(params: CustomerSegmentReqParams, config?: any): CustomerSegmentReqRes
+export type GetCustomerLegalReqData= ReqDataType<'findAllLegalByCustomerIdUsingGET'>
+export function getCustomerLegal(params: GetCustomerLegalReqParams, config?: any): GetCustomerLegalReqRes
 
-// Synchronising customer when query
 // 参数类型
-export type CustomerSynchronizationReqParams= ReqParamsType<'querySyncUsingGET'>
+export type GetCustomerSegmentReqParams= ReqParamsType<'customerSegmentUsingGET'>
 // 结果类型
-export type CustomerSynchronizationReqRes= ReqResType<'querySyncUsingGET'>
+export type GetCustomerSegmentReqRes= ReqResType<'customerSegmentUsingGET'>
 // 结果中的data类型
-export type CustomerSynchronizationReqData= ReqDataType<'querySyncUsingGET'>
-    
-export function getCustomerSynchronization(params: CustomerSynchronizationReqParams, config?: any): CustomerSynchronizationReqRes
+export type GetCustomerSegmentReqData= ReqDataType<'customerSegmentUsingGET'>
+export function getCustomerSegment(params: GetCustomerSegmentReqParams, config?: any): GetCustomerSegmentReqRes
 
-export function postCustomerSynchronization(params: CustomerSynchronizationReqParams, config?: any): CustomerSynchronizationReqRes
-
-export function putCustomerSynchronization(params: CustomerSynchronizationReqParams, config?: any): CustomerSynchronizationReqRes
-
-// Add customer tagging relation
 // 参数类型
-export type CustomerTaggingRelationReqParams= ReqParamsType<'addSegmentCustomerRelUsingPOST'>
+export type GetCustomerSynchronizationReqParams= ReqParamsType<'querySyncUsingGET'>
 // 结果类型
-export type CustomerTaggingRelationReqRes= ReqResType<'addSegmentCustomerRelUsingPOST'>
+export type GetCustomerSynchronizationReqRes= ReqResType<'querySyncUsingGET'>
 // 结果中的data类型
-export type CustomerTaggingRelationReqData= ReqDataType<'addSegmentCustomerRelUsingPOST'>
-    
-export function postCustomerTaggingRelation(params: CustomerTaggingRelationReqParams, config?: any): CustomerTaggingRelationReqRes
+export type GetCustomerSynchronizationReqData= ReqDataType<'querySyncUsingGET'>
+export function getCustomerSynchronization(params: GetCustomerSynchronizationReqParams, config?: any): GetCustomerSynchronizationReqRes
 
-// Upload b2c customer bulk
 // 参数类型
-export type CustomerExcelReqParams= ReqParamsType<'customerB2CExcelUsingPOST'>
+export type PostCustomerSynchronizationReqParams= ReqParamsType<'createSyncUsingPOST'>
 // 结果类型
-export type CustomerExcelReqRes= ReqResType<'customerB2CExcelUsingPOST'>
+export type PostCustomerSynchronizationReqRes= ReqResType<'createSyncUsingPOST'>
 // 结果中的data类型
-export type CustomerExcelReqData= ReqDataType<'customerB2CExcelUsingPOST'>
-    
-export function postCustomerExcel(params: CustomerExcelReqParams, config?: any): CustomerExcelReqRes
+export type PostCustomerSynchronizationReqData= ReqDataType<'createSyncUsingPOST'>
+export function postCustomerSynchronization(params: PostCustomerSynchronizationReqParams, config?: any): PostCustomerSynchronizationReqRes
 
-// Upload b2b customer bulk
 // 参数类型
-export type CustomerExcelB2bReqParams= ReqParamsType<'customerB2BExcelUsingPOST'>
+export type PutCustomerSynchronizationReqParams= ReqParamsType<'updateSyncUsingPUT'>
 // 结果类型
-export type CustomerExcelB2bReqRes= ReqResType<'customerB2BExcelUsingPOST'>
+export type PutCustomerSynchronizationReqRes= ReqResType<'updateSyncUsingPUT'>
 // 结果中的data类型
-export type CustomerExcelB2bReqData= ReqDataType<'customerB2BExcelUsingPOST'>
-    
-export function postCustomerExcelB2b(params: CustomerExcelB2bReqParams, config?: any): CustomerExcelB2bReqRes
+export type PutCustomerSynchronizationReqData= ReqDataType<'updateSyncUsingPUT'>
+export function putCustomerSynchronization(params: PutCustomerSynchronizationReqParams, config?: any): PutCustomerSynchronizationReqRes
 
-// Upload excel history list
 // 参数类型
-export type CustomerExcelHistoryReqParams= ReqParamsType<'findHistoryPageUsingGET'>
+export type PostCustomerTaggingRelationReqParams= ReqParamsType<'addSegmentCustomerRelUsingPOST'>
 // 结果类型
-export type CustomerExcelHistoryReqRes= ReqResType<'findHistoryPageUsingGET'>
+export type PostCustomerTaggingRelationReqRes= ReqResType<'addSegmentCustomerRelUsingPOST'>
 // 结果中的data类型
-export type CustomerExcelHistoryReqData= ReqDataType<'findHistoryPageUsingGET'>
-    
-export function getCustomerExcelHistory(params: CustomerExcelHistoryReqParams, config?: any): CustomerExcelHistoryReqRes
+export type PostCustomerTaggingRelationReqData= ReqDataType<'addSegmentCustomerRelUsingPOST'>
+export function postCustomerTaggingRelation(params: PostCustomerTaggingRelationReqParams, config?: any): PostCustomerTaggingRelationReqRes
 
-// Export customer excel template
 // 参数类型
-export type CustomerExcelTemplateReqParams= ReqParamsType<'exportTemplateB2CUsingGET'>
+export type PostCustomerExcelReqParams= ReqParamsType<'customerB2CExcelUsingPOST'>
 // 结果类型
-export type CustomerExcelTemplateReqRes= ReqResType<'exportTemplateB2CUsingGET'>
+export type PostCustomerExcelReqRes= ReqResType<'customerB2CExcelUsingPOST'>
 // 结果中的data类型
-export type CustomerExcelTemplateReqData= ReqDataType<'exportTemplateB2CUsingGET'>
-    
-export function getCustomerExcelTemplate(params: CustomerExcelTemplateReqParams, config?: any): CustomerExcelTemplateReqRes
+export type PostCustomerExcelReqData= ReqDataType<'customerB2CExcelUsingPOST'>
+export function postCustomerExcel(params: PostCustomerExcelReqParams, config?: any): PostCustomerExcelReqRes
 
-// Export customer excel template
 // 参数类型
-export type CustomerExcelTemplateB2bReqParams= ReqParamsType<'exportTemplateB2BUsingGET'>
+export type PostCustomerExcelB2bReqParams= ReqParamsType<'customerB2BExcelUsingPOST'>
 // 结果类型
-export type CustomerExcelTemplateB2bReqRes= ReqResType<'exportTemplateB2BUsingGET'>
+export type PostCustomerExcelB2bReqRes= ReqResType<'customerB2BExcelUsingPOST'>
 // 结果中的data类型
-export type CustomerExcelTemplateB2bReqData= ReqDataType<'exportTemplateB2BUsingGET'>
-    
-export function getCustomerExcelTemplateB2b(params: CustomerExcelTemplateB2bReqParams, config?: any): CustomerExcelTemplateB2bReqRes
+export type PostCustomerExcelB2bReqData= ReqDataType<'customerB2BExcelUsingPOST'>
+export function postCustomerExcelB2b(params: PostCustomerExcelB2bReqParams, config?: any): PostCustomerExcelB2bReqRes
 
-// Customer detail
 // 参数类型
-export type CustomerCustomerIdReqParams= ReqParamsType<'customerDetailUsingGET'>
+export type GetCustomerExcelHistoryReqParams= ReqParamsType<'findHistoryPageUsingGET'>
 // 结果类型
-export type CustomerCustomerIdReqRes= ReqResType<'customerDetailUsingGET'>
+export type GetCustomerExcelHistoryReqRes= ReqResType<'findHistoryPageUsingGET'>
 // 结果中的data类型
-export type CustomerCustomerIdReqData= ReqDataType<'customerDetailUsingGET'>
-    
-export function getCustomerCustomerId(params: CustomerCustomerIdReqParams, config?: any): CustomerCustomerIdReqRes
+export type GetCustomerExcelHistoryReqData= ReqDataType<'findHistoryPageUsingGET'>
+export function getCustomerExcelHistory(params: GetCustomerExcelHistoryReqParams, config?: any): GetCustomerExcelHistoryReqRes
 
-// Customers page list
 // 参数类型
-export type CustomersReqParams= ReqParamsType<'customerPageUsingGET'>
+export type GetCustomerExcelTemplateReqParams= ReqParamsType<'exportTemplateB2CUsingGET'>
 // 结果类型
-export type CustomersReqRes= ReqResType<'customerPageUsingGET'>
+export type GetCustomerExcelTemplateReqRes= ReqResType<'exportTemplateB2CUsingGET'>
 // 结果中的data类型
-export type CustomersReqData= ReqDataType<'customerPageUsingGET'>
-    
-export function getCustomers(params: CustomersReqParams, config?: any): CustomersReqRes
+export type GetCustomerExcelTemplateReqData= ReqDataType<'exportTemplateB2CUsingGET'>
+export function getCustomerExcelTemplate(params: GetCustomerExcelTemplateReqParams, config?: any): GetCustomerExcelTemplateReqRes
 
-// Customers page list
 // 参数类型
-export type CustomersNewReqParams= ReqParamsType<'customerPageNewUsingPOST'>
+export type GetCustomerExcelTemplateB2bReqParams= ReqParamsType<'exportTemplateB2BUsingGET'>
 // 结果类型
-export type CustomersNewReqRes= ReqResType<'customerPageNewUsingPOST'>
+export type GetCustomerExcelTemplateB2bReqRes= ReqResType<'exportTemplateB2BUsingGET'>
 // 结果中的data类型
-export type CustomersNewReqData= ReqDataType<'customerPageNewUsingPOST'>
-    
-export function postCustomersNew(params: CustomersNewReqParams, config?: any): CustomersNewReqRes
+export type GetCustomerExcelTemplateB2bReqData= ReqDataType<'exportTemplateB2BUsingGET'>
+export function getCustomerExcelTemplateB2b(params: GetCustomerExcelTemplateB2bReqParams, config?: any): GetCustomerExcelTemplateB2bReqRes
 
-// Add segment relation
 // 参数类型
-export type SagmentRelationReqParams= ReqParamsType<'addSegmentRelationUsingPOST'>
+export type GetCustomerCustomerIdReqParams= ReqParamsType<'customerDetailUsingGET'>
 // 结果类型
-export type SagmentRelationReqRes= ReqResType<'addSegmentRelationUsingPOST'>
+export type GetCustomerCustomerIdReqRes= ReqResType<'customerDetailUsingGET'>
 // 结果中的data类型
-export type SagmentRelationReqData= ReqDataType<'addSegmentRelationUsingPOST'>
-    
-export function postSagmentRelation(params: SagmentRelationReqParams, config?: any): SagmentRelationReqRes
+export type GetCustomerCustomerIdReqData= ReqDataType<'customerDetailUsingGET'>
+export function getCustomerCustomerId(params: GetCustomerCustomerIdReqParams, config?: any): GetCustomerCustomerIdReqRes
 
-// Delete segment customer relation
 // 参数类型
-export type SegmentCustomerRelationIdReqParams= ReqParamsType<'deleteSegmentCustomerRelByIdUsingDELETE'>
+export type GetCustomersReqParams= ReqParamsType<'customerPageUsingGET'>
 // 结果类型
-export type SegmentCustomerRelationIdReqRes= ReqResType<'deleteSegmentCustomerRelByIdUsingDELETE'>
+export type GetCustomersReqRes= ReqResType<'customerPageUsingGET'>
 // 结果中的data类型
-export type SegmentCustomerRelationIdReqData= ReqDataType<'deleteSegmentCustomerRelByIdUsingDELETE'>
-    
-export function deleteSegmentCustomerRelationId(params: SegmentCustomerRelationIdReqParams, config?: any): SegmentCustomerRelationIdReqRes
+export type GetCustomersReqData= ReqDataType<'customerPageUsingGET'>
+export function getCustomers(params: GetCustomersReqParams, config?: any): GetCustomersReqRes
 
-// Add welcome box tag
 // 参数类型
-export type WelcomeBoxTagReqParams= ReqParamsType<'saveWelcomeBoxTagUsingPOST'>
+export type PostCustomersNewReqParams= ReqParamsType<'customerPageNewUsingPOST'>
 // 结果类型
-export type WelcomeBoxTagReqRes= ReqResType<'saveWelcomeBoxTagUsingPOST'>
+export type PostCustomersNewReqRes= ReqResType<'customerPageNewUsingPOST'>
 // 结果中的data类型
-export type WelcomeBoxTagReqData= ReqDataType<'saveWelcomeBoxTagUsingPOST'>
-    
-export function postWelcomeBoxTag(params: WelcomeBoxTagReqParams, config?: any): WelcomeBoxTagReqRes
+export type PostCustomersNewReqData= ReqDataType<'customerPageNewUsingPOST'>
+export function postCustomersNew(params: PostCustomersNewReqParams, config?: any): PostCustomersNewReqRes
+
+// 参数类型
+export type PostSagmentRelationReqParams= ReqParamsType<'addSegmentRelationUsingPOST'>
+// 结果类型
+export type PostSagmentRelationReqRes= ReqResType<'addSegmentRelationUsingPOST'>
+// 结果中的data类型
+export type PostSagmentRelationReqData= ReqDataType<'addSegmentRelationUsingPOST'>
+export function postSagmentRelation(params: PostSagmentRelationReqParams, config?: any): PostSagmentRelationReqRes
+
+// 参数类型
+export type DeleteSegmentCustomerRelationIdReqParams= ReqParamsType<'deleteSegmentCustomerRelByIdUsingDELETE'>
+// 结果类型
+export type DeleteSegmentCustomerRelationIdReqRes= ReqResType<'deleteSegmentCustomerRelByIdUsingDELETE'>
+// 结果中的data类型
+export type DeleteSegmentCustomerRelationIdReqData= ReqDataType<'deleteSegmentCustomerRelByIdUsingDELETE'>
+export function deleteSegmentCustomerRelationId(params: DeleteSegmentCustomerRelationIdReqParams, config?: any): DeleteSegmentCustomerRelationIdReqRes
+
+// 参数类型
+export type PostWelcomeBoxTagReqParams= ReqParamsType<'saveWelcomeBoxTagUsingPOST'>
+// 结果类型
+export type PostWelcomeBoxTagReqRes= ReqResType<'saveWelcomeBoxTagUsingPOST'>
+// 结果中的data类型
+export type PostWelcomeBoxTagReqData= ReqDataType<'saveWelcomeBoxTagUsingPOST'>
+export function postWelcomeBoxTag(params: PostWelcomeBoxTagReqParams, config?: any): PostWelcomeBoxTagReqRes

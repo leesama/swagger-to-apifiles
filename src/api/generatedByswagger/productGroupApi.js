@@ -1,12 +1,25 @@
 
 // Product group api
 // Product group
-import request from '../utils/request';
+import request from '../../utils/request';
 // Add product group
+
+export function postProductGroup(data,config = {}){
+  return request(
+    {
+      url: `/product-group`,
+      method: 'POST',
+      data,
+      ...config
+    }
+  )
+}
+// Edit product group
+
 export function putProductGroup(data,config = {}){
   return request(
     {
-      url: '/product-group',
+      url: `/product-group`,
       method: 'PUT',
       data,
       ...config
@@ -14,6 +27,7 @@ export function putProductGroup(data,config = {}){
   )
 }
 // Export product group excel
+
 export function getProductGroupExcelExportId(id,config = {}){
   return request(
     {
@@ -24,10 +38,11 @@ export function getProductGroupExcelExportId(id,config = {}){
   )
 }
 // Upload product history
+
 export function getProductGroupExcelHistory(params,config = {}){
   return request(
     {
-      url: '/product-group/excel-history',
+      url: `/product-group/excel-history`,
       method: 'GET',
       params,
       ...config
@@ -35,10 +50,11 @@ export function getProductGroupExcelHistory(params,config = {}){
   )
 }
 // Upload product bulk
+
 export function postProductGroupExcelImport(data,config = {}){
   return request(
     {
-      url: '/product-group/excel-import',
+      url: `/product-group/excel-import`,
       method: 'POST',
       data,
       ...config
@@ -46,30 +62,33 @@ export function postProductGroupExcelImport(data,config = {}){
   )
 }
 // Export product excel template
+
 export function getProductGroupExcelTemplate(config = {}){
   return request(
     {
-      url: '/product-group/excel-template',
+      url: `/product-group/excel-template`,
       method: 'GET',
       ...config
     }
   )
 }
 // Delete product group
+
 export function deleteProductGroupId(id,config = {}){
   return request(
     {
-      url: `/product-group/{id}`,
+      url: `/product-group/${id}`,
       method: 'DELETE',
       ...config
     }
   )
 }
 // Product group page list
+
 export function getProductGroups(params,config = {}){
   return request(
     {
-      url: '/product-groups',
+      url: `/product-groups`,
       method: 'GET',
       params,
       ...config
@@ -77,10 +96,35 @@ export function getProductGroups(params,config = {}){
   )
 }
 // Product member page list
+
+export function getProductMember(params,config = {}){
+  return request(
+    {
+      url: `/product-member`,
+      method: 'GET',
+      params,
+      ...config
+    }
+  )
+}
+// Add product member
+
+export function postProductMember(data,config = {}){
+  return request(
+    {
+      url: `/product-member`,
+      method: 'POST',
+      data,
+      ...config
+    }
+  )
+}
+// Edit product member
+
 export function putProductMember(data,config = {}){
   return request(
     {
-      url: '/product-member',
+      url: `/product-member`,
       method: 'PUT',
       data,
       ...config
@@ -88,10 +132,11 @@ export function putProductMember(data,config = {}){
   )
 }
 // Delete product member
+
 export function deleteProductMemberId(id,config = {}){
   return request(
     {
-      url: `/product-member/{id}`,
+      url: `/product-member/${id}`,
       method: 'DELETE',
       ...config
     }

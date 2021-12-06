@@ -1,22 +1,18 @@
 
 import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
   
-// query
 // 参数类型
-export type HomeQueryReqParams= ReqParamsType<'queryUsingGET'>
+export type GetHomeQueryReqParams= ReqParamsType<'queryUsingGET'>
 // 结果类型
-export type HomeQueryReqRes= ReqResType<'queryUsingGET'>
+export type GetHomeQueryReqRes= ReqResType<'queryUsingGET'>
 // 结果中的data类型
-export type HomeQueryReqData= ReqDataType<'queryUsingGET'>
-    
-export function getHomeQuery(params: HomeQueryReqParams, config?: any): HomeQueryReqRes
+export type GetHomeQueryReqData= ReqDataType<'queryUsingGET'>
+export function getHomeQuery(params: GetHomeQueryReqParams, config?: any): GetHomeQueryReqRes
 
-// search
 // 参数类型
-export type HomeSearchReqParams= ReqParamsType<'searchUsingGET'>
+export type GetHomeSearchReqParams= ReqParamsType<'searchUsingGET'>
 // 结果类型
-export type HomeSearchReqRes= ReqResType<'searchUsingGET'>
+export type GetHomeSearchReqRes= ReqResType<'searchUsingGET'>
 // 结果中的data类型
-export type HomeSearchReqData= ReqDataType<'searchUsingGET'>
-    
-export function getHomeSearch(params: HomeSearchReqParams, config?: any): HomeSearchReqRes
+export type GetHomeSearchReqData= ReqDataType<'searchUsingGET'>
+export function getHomeSearch(params: GetHomeSearchReqParams, config?: any): GetHomeSearchReqRes

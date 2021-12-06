@@ -1,98 +1,98 @@
 
 import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
   
-// Add product group
 // 参数类型
-export type ProductGroupReqParams= ReqParamsType<'addUsingPOST_8'>
+export type PostProductGroupReqParams= ReqParamsType<'addUsingPOST_8'>
 // 结果类型
-export type ProductGroupReqRes= ReqResType<'addUsingPOST_8'>
+export type PostProductGroupReqRes= ReqResType<'addUsingPOST_8'>
 // 结果中的data类型
-export type ProductGroupReqData= ReqDataType<'addUsingPOST_8'>
-    
-export function postProductGroup(params: ProductGroupReqParams, config?: any): ProductGroupReqRes
+export type PostProductGroupReqData= ReqDataType<'addUsingPOST_8'>
+export function postProductGroup(params: PostProductGroupReqParams, config?: any): PostProductGroupReqRes
 
-export function putProductGroup(params: ProductGroupReqParams, config?: any): ProductGroupReqRes
-
-// Export product group excel
 // 参数类型
-export type ProductGroupExcelExportIdReqParams= ReqParamsType<'exportExcelUsingGET'>
+export type PutProductGroupReqParams= ReqParamsType<'editUsingPUT_2'>
 // 结果类型
-export type ProductGroupExcelExportIdReqRes= ReqResType<'exportExcelUsingGET'>
+export type PutProductGroupReqRes= ReqResType<'editUsingPUT_2'>
 // 结果中的data类型
-export type ProductGroupExcelExportIdReqData= ReqDataType<'exportExcelUsingGET'>
-    
-export function getProductGroupExcelExportId(params: ProductGroupExcelExportIdReqParams, config?: any): ProductGroupExcelExportIdReqRes
+export type PutProductGroupReqData= ReqDataType<'editUsingPUT_2'>
+export function putProductGroup(params: PutProductGroupReqParams, config?: any): PutProductGroupReqRes
 
-// Upload product history
 // 参数类型
-export type ProductGroupExcelHistoryReqParams= ReqParamsType<'excelHistoryUsingGET'>
+export type GetProductGroupExcelExportIdReqParams= ReqParamsType<'exportExcelUsingGET'>
 // 结果类型
-export type ProductGroupExcelHistoryReqRes= ReqResType<'excelHistoryUsingGET'>
+export type GetProductGroupExcelExportIdReqRes= ReqResType<'exportExcelUsingGET'>
 // 结果中的data类型
-export type ProductGroupExcelHistoryReqData= ReqDataType<'excelHistoryUsingGET'>
-    
-export function getProductGroupExcelHistory(params: ProductGroupExcelHistoryReqParams, config?: any): ProductGroupExcelHistoryReqRes
+export type GetProductGroupExcelExportIdReqData= ReqDataType<'exportExcelUsingGET'>
+export function getProductGroupExcelExportId(params: GetProductGroupExcelExportIdReqParams, config?: any): GetProductGroupExcelExportIdReqRes
 
-// Upload product bulk
 // 参数类型
-export type ProductGroupExcelImportReqParams= ReqParamsType<'importExcelUsingPOST'>
+export type GetProductGroupExcelHistoryReqParams= ReqParamsType<'excelHistoryUsingGET'>
 // 结果类型
-export type ProductGroupExcelImportReqRes= ReqResType<'importExcelUsingPOST'>
+export type GetProductGroupExcelHistoryReqRes= ReqResType<'excelHistoryUsingGET'>
 // 结果中的data类型
-export type ProductGroupExcelImportReqData= ReqDataType<'importExcelUsingPOST'>
-    
-export function postProductGroupExcelImport(params: ProductGroupExcelImportReqParams, config?: any): ProductGroupExcelImportReqRes
+export type GetProductGroupExcelHistoryReqData= ReqDataType<'excelHistoryUsingGET'>
+export function getProductGroupExcelHistory(params: GetProductGroupExcelHistoryReqParams, config?: any): GetProductGroupExcelHistoryReqRes
 
-// Export product excel template
 // 参数类型
-export type ProductGroupExcelTemplateReqParams= ReqParamsType<'exportTemplateUsingGET_2'>
+export type PostProductGroupExcelImportReqParams= ReqParamsType<'importExcelUsingPOST'>
 // 结果类型
-export type ProductGroupExcelTemplateReqRes= ReqResType<'exportTemplateUsingGET_2'>
+export type PostProductGroupExcelImportReqRes= ReqResType<'importExcelUsingPOST'>
 // 结果中的data类型
-export type ProductGroupExcelTemplateReqData= ReqDataType<'exportTemplateUsingGET_2'>
-    
-export function getProductGroupExcelTemplate(params: ProductGroupExcelTemplateReqParams, config?: any): ProductGroupExcelTemplateReqRes
+export type PostProductGroupExcelImportReqData= ReqDataType<'importExcelUsingPOST'>
+export function postProductGroupExcelImport(params: PostProductGroupExcelImportReqParams, config?: any): PostProductGroupExcelImportReqRes
 
-// Delete product group
 // 参数类型
-export type ProductGroupIdReqParams= ReqParamsType<'deleteUsingDELETE_8'>
+export type GetProductGroupExcelTemplateReqParams= ReqParamsType<'exportTemplateUsingGET_2'>
 // 结果类型
-export type ProductGroupIdReqRes= ReqResType<'deleteUsingDELETE_8'>
+export type GetProductGroupExcelTemplateReqRes= ReqResType<'exportTemplateUsingGET_2'>
 // 结果中的data类型
-export type ProductGroupIdReqData= ReqDataType<'deleteUsingDELETE_8'>
-    
-export function deleteProductGroupId(params: ProductGroupIdReqParams, config?: any): ProductGroupIdReqRes
+export type GetProductGroupExcelTemplateReqData= ReqDataType<'exportTemplateUsingGET_2'>
+export function getProductGroupExcelTemplate(params: GetProductGroupExcelTemplateReqParams, config?: any): GetProductGroupExcelTemplateReqRes
 
-// Product group page list
 // 参数类型
-export type ProductGroupsReqParams= ReqParamsType<'pageUsingGET_8'>
+export type DeleteProductGroupIdReqParams= ReqParamsType<'deleteUsingDELETE_8'>
 // 结果类型
-export type ProductGroupsReqRes= ReqResType<'pageUsingGET_8'>
+export type DeleteProductGroupIdReqRes= ReqResType<'deleteUsingDELETE_8'>
 // 结果中的data类型
-export type ProductGroupsReqData= ReqDataType<'pageUsingGET_8'>
-    
-export function getProductGroups(params: ProductGroupsReqParams, config?: any): ProductGroupsReqRes
+export type DeleteProductGroupIdReqData= ReqDataType<'deleteUsingDELETE_8'>
+export function deleteProductGroupId(params: DeleteProductGroupIdReqParams, config?: any): DeleteProductGroupIdReqRes
 
-// Product member page list
 // 参数类型
-export type ProductMemberReqParams= ReqParamsType<'findByGroupIdUsingGET'>
+export type GetProductGroupsReqParams= ReqParamsType<'pageUsingGET_8'>
 // 结果类型
-export type ProductMemberReqRes= ReqResType<'findByGroupIdUsingGET'>
+export type GetProductGroupsReqRes= ReqResType<'pageUsingGET_8'>
 // 结果中的data类型
-export type ProductMemberReqData= ReqDataType<'findByGroupIdUsingGET'>
-    
-export function getProductMember(params: ProductMemberReqParams, config?: any): ProductMemberReqRes
+export type GetProductGroupsReqData= ReqDataType<'pageUsingGET_8'>
+export function getProductGroups(params: GetProductGroupsReqParams, config?: any): GetProductGroupsReqRes
 
-export function postProductMember(params: ProductMemberReqParams, config?: any): ProductMemberReqRes
-
-export function putProductMember(params: ProductMemberReqParams, config?: any): ProductMemberReqRes
-
-// Delete product member
 // 参数类型
-export type ProductMemberIdReqParams= ReqParamsType<'deleteUsingDELETE_9'>
+export type GetProductMemberReqParams= ReqParamsType<'findByGroupIdUsingGET'>
 // 结果类型
-export type ProductMemberIdReqRes= ReqResType<'deleteUsingDELETE_9'>
+export type GetProductMemberReqRes= ReqResType<'findByGroupIdUsingGET'>
 // 结果中的data类型
-export type ProductMemberIdReqData= ReqDataType<'deleteUsingDELETE_9'>
-    
-export function deleteProductMemberId(params: ProductMemberIdReqParams, config?: any): ProductMemberIdReqRes
+export type GetProductMemberReqData= ReqDataType<'findByGroupIdUsingGET'>
+export function getProductMember(params: GetProductMemberReqParams, config?: any): GetProductMemberReqRes
+
+// 参数类型
+export type PostProductMemberReqParams= ReqParamsType<'addUsingPOST_9'>
+// 结果类型
+export type PostProductMemberReqRes= ReqResType<'addUsingPOST_9'>
+// 结果中的data类型
+export type PostProductMemberReqData= ReqDataType<'addUsingPOST_9'>
+export function postProductMember(params: PostProductMemberReqParams, config?: any): PostProductMemberReqRes
+
+// 参数类型
+export type PutProductMemberReqParams= ReqParamsType<'editUsingPUT_3'>
+// 结果类型
+export type PutProductMemberReqRes= ReqResType<'editUsingPUT_3'>
+// 结果中的data类型
+export type PutProductMemberReqData= ReqDataType<'editUsingPUT_3'>
+export function putProductMember(params: PutProductMemberReqParams, config?: any): PutProductMemberReqRes
+
+// 参数类型
+export type DeleteProductMemberIdReqParams= ReqParamsType<'deleteUsingDELETE_9'>
+// 结果类型
+export type DeleteProductMemberIdReqRes= ReqResType<'deleteUsingDELETE_9'>
+// 结果中的data类型
+export type DeleteProductMemberIdReqData= ReqDataType<'deleteUsingDELETE_9'>
+export function deleteProductMemberId(params: DeleteProductMemberIdReqParams, config?: any): DeleteProductMemberIdReqRes

@@ -1,46 +1,50 @@
 
 import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
   
-// Consent page list
 // 参数类型
-export type ConsentReqParams= ReqParamsType<'consentListUsingGET'>
+export type GetConsentReqParams= ReqParamsType<'consentListUsingGET'>
 // 结果类型
-export type ConsentReqRes= ReqResType<'consentListUsingGET'>
+export type GetConsentReqRes= ReqResType<'consentListUsingGET'>
 // 结果中的data类型
-export type ConsentReqData= ReqDataType<'consentListUsingGET'>
-    
-export function getConsent(params: ConsentReqParams, config?: any): ConsentReqRes
+export type GetConsentReqData= ReqDataType<'consentListUsingGET'>
+export function getConsent(params: GetConsentReqParams, config?: any): GetConsentReqRes
 
-export function postConsent(params: ConsentReqParams, config?: any): ConsentReqRes
-
-export function putConsent(params: ConsentReqParams, config?: any): ConsentReqRes
-
-// Delete consent
 // 参数类型
-export type ConsentIdReqParams= ReqParamsType<'deleteConsentUsingDELETE'>
+export type PostConsentReqParams= ReqParamsType<'addUsingPOST'>
 // 结果类型
-export type ConsentIdReqRes= ReqResType<'deleteConsentUsingDELETE'>
+export type PostConsentReqRes= ReqResType<'addUsingPOST'>
 // 结果中的data类型
-export type ConsentIdReqData= ReqDataType<'deleteConsentUsingDELETE'>
-    
-export function deleteConsentId(params: ConsentIdReqParams, config?: any): ConsentIdReqRes
+export type PostConsentReqData= ReqDataType<'addUsingPOST'>
+export function postConsent(params: PostConsentReqParams, config?: any): PostConsentReqRes
 
-// Edit subscription preferences
 // 参数类型
-export type SubscriptionPreferencesReqParams= ReqParamsType<'updateUsingPUT_4'>
+export type PutConsentReqParams= ReqParamsType<'editUsingPUT'>
 // 结果类型
-export type SubscriptionPreferencesReqRes= ReqResType<'updateUsingPUT_4'>
+export type PutConsentReqRes= ReqResType<'editUsingPUT'>
 // 结果中的data类型
-export type SubscriptionPreferencesReqData= ReqDataType<'updateUsingPUT_4'>
-    
-export function putSubscriptionPreferences(params: SubscriptionPreferencesReqParams, config?: any): SubscriptionPreferencesReqRes
+export type PutConsentReqData= ReqDataType<'editUsingPUT'>
+export function putConsent(params: PutConsentReqParams, config?: any): PutConsentReqRes
 
-// Subscription preferences list
 // 参数类型
-export type SubscriptionPreferencesIdReqParams= ReqParamsType<'subscriptionPreferencesListUsingGET'>
+export type DeleteConsentIdReqParams= ReqParamsType<'deleteConsentUsingDELETE'>
 // 结果类型
-export type SubscriptionPreferencesIdReqRes= ReqResType<'subscriptionPreferencesListUsingGET'>
+export type DeleteConsentIdReqRes= ReqResType<'deleteConsentUsingDELETE'>
 // 结果中的data类型
-export type SubscriptionPreferencesIdReqData= ReqDataType<'subscriptionPreferencesListUsingGET'>
-    
-export function getSubscriptionPreferencesId(params: SubscriptionPreferencesIdReqParams, config?: any): SubscriptionPreferencesIdReqRes
+export type DeleteConsentIdReqData= ReqDataType<'deleteConsentUsingDELETE'>
+export function deleteConsentId(params: DeleteConsentIdReqParams, config?: any): DeleteConsentIdReqRes
+
+// 参数类型
+export type PutSubscriptionPreferencesReqParams= ReqParamsType<'updateUsingPUT_4'>
+// 结果类型
+export type PutSubscriptionPreferencesReqRes= ReqResType<'updateUsingPUT_4'>
+// 结果中的data类型
+export type PutSubscriptionPreferencesReqData= ReqDataType<'updateUsingPUT_4'>
+export function putSubscriptionPreferences(params: PutSubscriptionPreferencesReqParams, config?: any): PutSubscriptionPreferencesReqRes
+
+// 参数类型
+export type GetSubscriptionPreferencesIdReqParams= ReqParamsType<'subscriptionPreferencesListUsingGET'>
+// 结果类型
+export type GetSubscriptionPreferencesIdReqRes= ReqResType<'subscriptionPreferencesListUsingGET'>
+// 结果中的data类型
+export type GetSubscriptionPreferencesIdReqData= ReqDataType<'subscriptionPreferencesListUsingGET'>
+export function getSubscriptionPreferencesId(params: GetSubscriptionPreferencesIdReqParams, config?: any): GetSubscriptionPreferencesIdReqRes

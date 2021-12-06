@@ -1,12 +1,10 @@
 
 import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
   
-// Application list
 // 参数类型
-export type ApplicationReqParams= ReqParamsType<'applicationPageUsingGET'>
+export type GetApplicationReqParams= ReqParamsType<'applicationPageUsingGET'>
 // 结果类型
-export type ApplicationReqRes= ReqResType<'applicationPageUsingGET'>
+export type GetApplicationReqRes= ReqResType<'applicationPageUsingGET'>
 // 结果中的data类型
-export type ApplicationReqData= ReqDataType<'applicationPageUsingGET'>
-    
-export function getApplication(params: ApplicationReqParams, config?: any): ApplicationReqRes
+export type GetApplicationReqData= ReqDataType<'applicationPageUsingGET'>
+export function getApplication(params: GetApplicationReqParams, config?: any): GetApplicationReqRes

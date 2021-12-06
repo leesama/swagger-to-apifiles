@@ -1,12 +1,13 @@
 
 // Application api
 // Application
-import request from '../utils/request';
+import request from '../../utils/request';
 // Application list
+
 export function getApplication(params,config = {}){
   return request(
     {
-      url: '/application',
+      url: `/application`,
       method: 'GET',
       params,
       ...config

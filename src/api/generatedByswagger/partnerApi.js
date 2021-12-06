@@ -1,12 +1,13 @@
 
 // Partner api
 // Partner
-import request from '../utils/request';
+import request from '../../utils/request';
 // Edit partner detail
+
 export function putPartner(data,config = {}){
   return request(
     {
-      url: '/partner',
+      url: `/partner`,
       method: 'PUT',
       data,
       ...config
@@ -14,10 +15,23 @@ export function putPartner(data,config = {}){
   )
 }
 // Export partner member excel
+
+export function getPartnerGroupMemberExcel(params,config = {}){
+  return request(
+    {
+      url: `/partner-group/member/excel`,
+      method: 'GET',
+      params,
+      ...config
+    }
+  )
+}
+// Import partner group member
+
 export function postPartnerGroupMemberExcel(data,config = {}){
   return request(
     {
-      url: '/partner-group/member/excel',
+      url: `/partner-group/member/excel`,
       method: 'POST',
       data,
       ...config
@@ -25,16 +39,18 @@ export function postPartnerGroupMemberExcel(data,config = {}){
   )
 }
 // Export partner member template
+
 export function getPartnerGroupMemberExcelTemplate(config = {}){
   return request(
     {
-      url: '/partner-group/member/excel/template',
+      url: `/partner-group/member/excel/template`,
       method: 'GET',
       ...config
     }
   )
 }
 // Partner invoice detail
+
 export function getPartnerInvoiceId(id,config = {}){
   return request(
     {
@@ -45,6 +61,7 @@ export function getPartnerInvoiceId(id,config = {}){
   )
 }
 // Partner public detail
+
 export function getPartnerPublicId(id,config = {}){
   return request(
     {
@@ -55,10 +72,11 @@ export function getPartnerPublicId(id,config = {}){
   )
 }
 // Synchronize partner list
+
 export function postPartnerSync(data,config = {}){
   return request(
     {
-      url: '/partner/sync',
+      url: `/partner/sync`,
       method: 'POST',
       data,
       ...config
@@ -66,6 +84,7 @@ export function postPartnerSync(data,config = {}){
   )
 }
 // Partner detail
+
 export function getPartnerId(id,config = {}){
   return request(
     {
@@ -76,10 +95,11 @@ export function getPartnerId(id,config = {}){
   )
 }
 // Partner page list
+
 export function getPartners(params,config = {}){
   return request(
     {
-      url: '/partners',
+      url: `/partners`,
       method: 'GET',
       params,
       ...config

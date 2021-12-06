@@ -3850,6 +3850,7 @@ export interface definitions {
     success?: boolean;
   };
   PartnerRelationShipSyncEditRequest: {
+    clientId?: string;
     companyId?: string;
     externalRelationShipId?: string;
     oktaId?: string;

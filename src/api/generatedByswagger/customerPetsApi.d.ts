@@ -1,114 +1,98 @@
 
 import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
   
-// Customer pets prop relation page list
 // 参数类型
-export type CustomerPetsPropRelationIdReqParams= ReqParamsType<'queryByPetsIdUsingGET'>
+export type GetCustomerPetsPropRelationIdReqParams= ReqParamsType<'queryByPetsIdUsingGET'>
 // 结果类型
-export type CustomerPetsPropRelationIdReqRes= ReqResType<'queryByPetsIdUsingGET'>
+export type GetCustomerPetsPropRelationIdReqRes= ReqResType<'queryByPetsIdUsingGET'>
 // 结果中的data类型
-export type CustomerPetsPropRelationIdReqData= ReqDataType<'queryByPetsIdUsingGET'>
-    
-export function getCustomerPetsPropRelationId(params: CustomerPetsPropRelationIdReqParams, config?: any): CustomerPetsPropRelationIdReqRes
+export type GetCustomerPetsPropRelationIdReqData= ReqDataType<'queryByPetsIdUsingGET'>
+export function getCustomerPetsPropRelationId(params: GetCustomerPetsPropRelationIdReqParams, config?: any): GetCustomerPetsPropRelationIdReqRes
 
-// Customer pets page list
 // 参数类型
-export type CustomerPetsIdReqParams= ReqParamsType<'findByPetsIdUsingGET'>
+export type GetCustomerPetsIdReqParams= ReqParamsType<'findByPetsIdUsingGET'>
 // 结果类型
-export type CustomerPetsIdReqRes= ReqResType<'findByPetsIdUsingGET'>
+export type GetCustomerPetsIdReqRes= ReqResType<'findByPetsIdUsingGET'>
 // 结果中的data类型
-export type CustomerPetsIdReqData= ReqDataType<'findByPetsIdUsingGET'>
-    
-export function getCustomerPetsId(params: CustomerPetsIdReqParams, config?: any): CustomerPetsIdReqRes
+export type GetCustomerPetsIdReqData= ReqDataType<'findByPetsIdUsingGET'>
+export function getCustomerPetsId(params: GetCustomerPetsIdReqParams, config?: any): GetCustomerPetsIdReqRes
 
-export function deleteCustomerPetsId(params: CustomerPetsIdReqParams, config?: any): CustomerPetsIdReqRes
-
-// Pets assigned partner contacts page list
 // 参数类型
-export type PetsAssignedPartnerContactsReqParams= ReqParamsType<'queryByPetsIdUsingGET_1'>
+export type DeleteCustomerPetsIdReqParams= ReqParamsType<'deleteUsingDELETE_1'>
 // 结果类型
-export type PetsAssignedPartnerContactsReqRes= ReqResType<'queryByPetsIdUsingGET_1'>
+export type DeleteCustomerPetsIdReqRes= ReqResType<'deleteUsingDELETE_1'>
 // 结果中的data类型
-export type PetsAssignedPartnerContactsReqData= ReqDataType<'queryByPetsIdUsingGET_1'>
-    
-export function getPetsAssignedPartnerContacts(params: PetsAssignedPartnerContactsReqParams, config?: any): PetsAssignedPartnerContactsReqRes
+export type DeleteCustomerPetsIdReqData= ReqDataType<'deleteUsingDELETE_1'>
+export function deleteCustomerPetsId(params: DeleteCustomerPetsIdReqParams, config?: any): DeleteCustomerPetsIdReqRes
 
-// Pets health context page list
 // 参数类型
-export type PetsHealthContextsReqParams= ReqParamsType<'queryByPetsIdUsingGET_2'>
+export type GetPetsAssignedPartnerContactsReqParams= ReqParamsType<'queryByPetsIdUsingGET_1'>
 // 结果类型
-export type PetsHealthContextsReqRes= ReqResType<'queryByPetsIdUsingGET_2'>
+export type GetPetsAssignedPartnerContactsReqRes= ReqResType<'queryByPetsIdUsingGET_1'>
 // 结果中的data类型
-export type PetsHealthContextsReqData= ReqDataType<'queryByPetsIdUsingGET_2'>
-    
-export function getPetsHealthContexts(params: PetsHealthContextsReqParams, config?: any): PetsHealthContextsReqRes
+export type GetPetsAssignedPartnerContactsReqData= ReqDataType<'queryByPetsIdUsingGET_1'>
+export function getPetsAssignedPartnerContacts(params: GetPetsAssignedPartnerContactsReqParams, config?: any): GetPetsAssignedPartnerContactsReqRes
 
-// Pets ownership history page list
 // 参数类型
-export type PetsOwnershipHistorysReqParams= ReqParamsType<'queryByPetsIdUsingGET_3'>
+export type GetPetsHealthContextsReqParams= ReqParamsType<'queryByPetsIdUsingGET_2'>
 // 结果类型
-export type PetsOwnershipHistorysReqRes= ReqResType<'queryByPetsIdUsingGET_3'>
+export type GetPetsHealthContextsReqRes= ReqResType<'queryByPetsIdUsingGET_2'>
 // 结果中的data类型
-export type PetsOwnershipHistorysReqData= ReqDataType<'queryByPetsIdUsingGET_3'>
-    
-export function getPetsOwnershipHistorys(params: PetsOwnershipHistorysReqParams, config?: any): PetsOwnershipHistorysReqRes
+export type GetPetsHealthContextsReqData= ReqDataType<'queryByPetsIdUsingGET_2'>
+export function getPetsHealthContexts(params: GetPetsHealthContextsReqParams, config?: any): GetPetsHealthContextsReqRes
 
-// Pets purchase place preferences page list
 // 参数类型
-export type PetsPurchasePlacePreferencesReqParams= ReqParamsType<'queryByPetsIdUsingGET_4'>
+export type GetPetsOwnershipHistorysReqParams= ReqParamsType<'queryByPetsIdUsingGET_3'>
 // 结果类型
-export type PetsPurchasePlacePreferencesReqRes= ReqResType<'queryByPetsIdUsingGET_4'>
+export type GetPetsOwnershipHistorysReqRes= ReqResType<'queryByPetsIdUsingGET_3'>
 // 结果中的data类型
-export type PetsPurchasePlacePreferencesReqData= ReqDataType<'queryByPetsIdUsingGET_4'>
-    
-export function getPetsPurchasePlacePreferences(params: PetsPurchasePlacePreferencesReqParams, config?: any): PetsPurchasePlacePreferencesReqRes
+export type GetPetsOwnershipHistorysReqData= ReqDataType<'queryByPetsIdUsingGET_3'>
+export function getPetsOwnershipHistorys(params: GetPetsOwnershipHistorysReqParams, config?: any): GetPetsOwnershipHistorysReqRes
 
-// Pets weight bcs series page list
 // 参数类型
-export type PetsWeightBcsReqParams= ReqParamsType<'queryByPetsIdUsingGET_5'>
+export type GetPetsPurchasePlacePreferencesReqParams= ReqParamsType<'queryByPetsIdUsingGET_4'>
 // 结果类型
-export type PetsWeightBcsReqRes= ReqResType<'queryByPetsIdUsingGET_5'>
+export type GetPetsPurchasePlacePreferencesReqRes= ReqResType<'queryByPetsIdUsingGET_4'>
 // 结果中的data类型
-export type PetsWeightBcsReqData= ReqDataType<'queryByPetsIdUsingGET_5'>
-    
-export function getPetsWeightBcs(params: PetsWeightBcsReqParams, config?: any): PetsWeightBcsReqRes
+export type GetPetsPurchasePlacePreferencesReqData= ReqDataType<'queryByPetsIdUsingGET_4'>
+export function getPetsPurchasePlacePreferences(params: GetPetsPurchasePlacePreferencesReqParams, config?: any): GetPetsPurchasePlacePreferencesReqRes
 
-// Import customer pets
 // 参数类型
-export type PetsExcelReqParams= ReqParamsType<'importCustomerPetsListUsingPOST'>
+export type GetPetsWeightBcsReqParams= ReqParamsType<'queryByPetsIdUsingGET_5'>
 // 结果类型
-export type PetsExcelReqRes= ReqResType<'importCustomerPetsListUsingPOST'>
+export type GetPetsWeightBcsReqRes= ReqResType<'queryByPetsIdUsingGET_5'>
 // 结果中的data类型
-export type PetsExcelReqData= ReqDataType<'importCustomerPetsListUsingPOST'>
-    
-export function postPetsExcel(params: PetsExcelReqParams, config?: any): PetsExcelReqRes
+export type GetPetsWeightBcsReqData= ReqDataType<'queryByPetsIdUsingGET_5'>
+export function getPetsWeightBcs(params: GetPetsWeightBcsReqParams, config?: any): GetPetsWeightBcsReqRes
 
-// Export pets template
 // 参数类型
-export type PetsExcelTemplateReqParams= ReqParamsType<'exportTemplateUsingGET'>
+export type PostPetsExcelReqParams= ReqParamsType<'importCustomerPetsListUsingPOST'>
 // 结果类型
-export type PetsExcelTemplateReqRes= ReqResType<'exportTemplateUsingGET'>
+export type PostPetsExcelReqRes= ReqResType<'importCustomerPetsListUsingPOST'>
 // 结果中的data类型
-export type PetsExcelTemplateReqData= ReqDataType<'exportTemplateUsingGET'>
-    
-export function getPetsExcelTemplate(params: PetsExcelTemplateReqParams, config?: any): PetsExcelTemplateReqRes
+export type PostPetsExcelReqData= ReqDataType<'importCustomerPetsListUsingPOST'>
+export function postPetsExcel(params: PostPetsExcelReqParams, config?: any): PostPetsExcelReqRes
 
-//  Pets history excel
 // 参数类型
-export type PetsHistoryExcelReqParams= ReqParamsType<'historyPageUsingGET'>
+export type GetPetsExcelTemplateReqParams= ReqParamsType<'exportTemplateUsingGET'>
 // 结果类型
-export type PetsHistoryExcelReqRes= ReqResType<'historyPageUsingGET'>
+export type GetPetsExcelTemplateReqRes= ReqResType<'exportTemplateUsingGET'>
 // 结果中的data类型
-export type PetsHistoryExcelReqData= ReqDataType<'historyPageUsingGET'>
-    
-export function getPetsHistoryExcel(params: PetsHistoryExcelReqParams, config?: any): PetsHistoryExcelReqRes
+export type GetPetsExcelTemplateReqData= ReqDataType<'exportTemplateUsingGET'>
+export function getPetsExcelTemplate(params: GetPetsExcelTemplateReqParams, config?: any): GetPetsExcelTemplateReqRes
 
-// Pets detail
 // 参数类型
-export type PetsIdReqParams= ReqParamsType<'findByIdUsingGET_1'>
+export type GetPetsHistoryExcelReqParams= ReqParamsType<'historyPageUsingGET'>
 // 结果类型
-export type PetsIdReqRes= ReqResType<'findByIdUsingGET_1'>
+export type GetPetsHistoryExcelReqRes= ReqResType<'historyPageUsingGET'>
 // 结果中的data类型
-export type PetsIdReqData= ReqDataType<'findByIdUsingGET_1'>
-    
-export function getPetsId(params: PetsIdReqParams, config?: any): PetsIdReqRes
+export type GetPetsHistoryExcelReqData= ReqDataType<'historyPageUsingGET'>
+export function getPetsHistoryExcel(params: GetPetsHistoryExcelReqParams, config?: any): GetPetsHistoryExcelReqRes
+
+// 参数类型
+export type GetPetsIdReqParams= ReqParamsType<'findByIdUsingGET_1'>
+// 结果类型
+export type GetPetsIdReqRes= ReqResType<'findByIdUsingGET_1'>
+// 结果中的data类型
+export type GetPetsIdReqData= ReqDataType<'findByIdUsingGET_1'>
+export function getPetsId(params: GetPetsIdReqParams, config?: any): GetPetsIdReqRes

@@ -1,102 +1,82 @@
 
 import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
   
-// Collections with related products page list
 // 参数类型
-export type CollectionsWithRelatedProductsReqParams= ReqParamsType<'pageUsingGET'>
+export type GetCollectionsWithRelatedProductsReqParams= ReqParamsType<'pageUsingGET'>
 // 结果类型
-export type CollectionsWithRelatedProductsReqRes= ReqResType<'pageUsingGET'>
+export type GetCollectionsWithRelatedProductsReqRes= ReqResType<'pageUsingGET'>
 // 结果中的data类型
-export type CollectionsWithRelatedProductsReqData= ReqDataType<'pageUsingGET'>
-    
-export function getCollectionsWithRelatedProducts(params: CollectionsWithRelatedProductsReqParams, config?: any): CollectionsWithRelatedProductsReqRes
+export type GetCollectionsWithRelatedProductsReqData= ReqDataType<'pageUsingGET'>
+export function getCollectionsWithRelatedProducts(params: GetCollectionsWithRelatedProductsReqParams, config?: any): GetCollectionsWithRelatedProductsReqRes
 
-// lifestyleSync
 // 参数类型
-export type LifestyleSyncReqParams= ReqParamsType<'speciesCodeSyncUsingGET'>
+export type GetLifestyleSyncReqParams= ReqParamsType<'speciesCodeSyncUsingGET'>
 // 结果类型
-export type LifestyleSyncReqRes= ReqResType<'speciesCodeSyncUsingGET'>
+export type GetLifestyleSyncReqRes= ReqResType<'speciesCodeSyncUsingGET'>
 // 结果中的data类型
-export type LifestyleSyncReqData= ReqDataType<'speciesCodeSyncUsingGET'>
-    
-export function getLifestyleSync(params: LifestyleSyncReqParams, config?: any): LifestyleSyncReqRes
+export type GetLifestyleSyncReqData= ReqDataType<'speciesCodeSyncUsingGET'>
+export function getLifestyleSync(params: GetLifestyleSyncReqParams, config?: any): GetLifestyleSyncReqRes
 
-// Collection  page
 // 参数类型
-export type PoxGoodsReqParams= ReqParamsType<'pageUsingGET_6'>
+export type GetPoxGoodsReqParams= ReqParamsType<'pageUsingGET_6'>
 // 结果类型
-export type PoxGoodsReqRes= ReqResType<'pageUsingGET_6'>
+export type GetPoxGoodsReqRes= ReqResType<'pageUsingGET_6'>
 // 结果中的data类型
-export type PoxGoodsReqData= ReqDataType<'pageUsingGET_6'>
-    
-export function getPoxGoods(params: PoxGoodsReqParams, config?: any): PoxGoodsReqRes
+export type GetPoxGoodsReqData= ReqDataType<'pageUsingGET_6'>
+export function getPoxGoods(params: GetPoxGoodsReqParams, config?: any): GetPoxGoodsReqRes
 
-// Collection detail by extnernalId
 // 参数类型
-export type PoxGoodsDetailExtnernalIdExtnernalIdReqParams= ReqParamsType<'detailByExtnernalIdUsingGET'>
+export type GetPoxGoodsDetailExtnernalIdExtnernalIdReqParams= ReqParamsType<'detailByExtnernalIdUsingGET'>
 // 结果类型
-export type PoxGoodsDetailExtnernalIdExtnernalIdReqRes= ReqResType<'detailByExtnernalIdUsingGET'>
+export type GetPoxGoodsDetailExtnernalIdExtnernalIdReqRes= ReqResType<'detailByExtnernalIdUsingGET'>
 // 结果中的data类型
-export type PoxGoodsDetailExtnernalIdExtnernalIdReqData= ReqDataType<'detailByExtnernalIdUsingGET'>
-    
-export function getPoxGoodsDetailExtnernalIdExtnernalId(params: PoxGoodsDetailExtnernalIdExtnernalIdReqParams, config?: any): PoxGoodsDetailExtnernalIdExtnernalIdReqRes
+export type GetPoxGoodsDetailExtnernalIdExtnernalIdReqData= ReqDataType<'detailByExtnernalIdUsingGET'>
+export function getPoxGoodsDetailExtnernalIdExtnernalId(params: GetPoxGoodsDetailExtnernalIdExtnernalIdReqParams, config?: any): GetPoxGoodsDetailExtnernalIdExtnernalIdReqRes
 
-// Collection detail
 // 参数类型
-export type PoxGoodsDetailIdReqParams= ReqParamsType<'detailUsingGET'>
+export type GetPoxGoodsDetailIdReqParams= ReqParamsType<'detailUsingGET'>
 // 结果类型
-export type PoxGoodsDetailIdReqRes= ReqResType<'detailUsingGET'>
+export type GetPoxGoodsDetailIdReqRes= ReqResType<'detailUsingGET'>
 // 结果中的data类型
-export type PoxGoodsDetailIdReqData= ReqDataType<'detailUsingGET'>
-    
-export function getPoxGoodsDetailId(params: PoxGoodsDetailIdReqParams, config?: any): PoxGoodsDetailIdReqRes
+export type GetPoxGoodsDetailIdReqData= ReqDataType<'detailUsingGET'>
+export function getPoxGoodsDetailId(params: GetPoxGoodsDetailIdReqParams, config?: any): GetPoxGoodsDetailIdReqRes
 
-// Pox goods info page
 // 参数类型
-export type PoxGoodsInfoReqParams= ReqParamsType<'pageUsingGET_7'>
+export type GetPoxGoodsInfoReqParams= ReqParamsType<'pageUsingGET_7'>
 // 结果类型
-export type PoxGoodsInfoReqRes= ReqResType<'pageUsingGET_7'>
+export type GetPoxGoodsInfoReqRes= ReqResType<'pageUsingGET_7'>
 // 结果中的data类型
-export type PoxGoodsInfoReqData= ReqDataType<'pageUsingGET_7'>
-    
-export function getPoxGoodsInfo(params: PoxGoodsInfoReqParams, config?: any): PoxGoodsInfoReqRes
+export type GetPoxGoodsInfoReqData= ReqDataType<'pageUsingGET_7'>
+export function getPoxGoodsInfo(params: GetPoxGoodsInfoReqParams, config?: any): GetPoxGoodsInfoReqRes
 
-// Pox goods info list
 // 参数类型
-export type PoxGoodsInfoIdReqParams= ReqParamsType<'queryUsingGET_3'>
+export type GetPoxGoodsInfoIdReqParams= ReqParamsType<'queryUsingGET_3'>
 // 结果类型
-export type PoxGoodsInfoIdReqRes= ReqResType<'queryUsingGET_3'>
+export type GetPoxGoodsInfoIdReqRes= ReqResType<'queryUsingGET_3'>
 // 结果中的data类型
-export type PoxGoodsInfoIdReqData= ReqDataType<'queryUsingGET_3'>
-    
-export function getPoxGoodsInfoId(params: PoxGoodsInfoIdReqParams, config?: any): PoxGoodsInfoIdReqRes
+export type GetPoxGoodsInfoIdReqData= ReqDataType<'queryUsingGET_3'>
+export function getPoxGoodsInfoId(params: GetPoxGoodsInfoIdReqParams, config?: any): GetPoxGoodsInfoIdReqRes
 
-// syncPoxGoods
 // 参数类型
-export type PoxGoodsSyncReqParams= ReqParamsType<'syncPoxGoodsUsingGET'>
+export type GetPoxGoodsSyncReqParams= ReqParamsType<'syncPoxGoodsUsingGET'>
 // 结果类型
-export type PoxGoodsSyncReqRes= ReqResType<'syncPoxGoodsUsingGET'>
+export type GetPoxGoodsSyncReqRes= ReqResType<'syncPoxGoodsUsingGET'>
 // 结果中的data类型
-export type PoxGoodsSyncReqData= ReqDataType<'syncPoxGoodsUsingGET'>
-    
-export function getPoxGoodsSync(params: PoxGoodsSyncReqParams, config?: any): PoxGoodsSyncReqRes
+export type GetPoxGoodsSyncReqData= ReqDataType<'syncPoxGoodsUsingGET'>
+export function getPoxGoodsSync(params: GetPoxGoodsSyncReqParams, config?: any): GetPoxGoodsSyncReqRes
 
-// ProductFinder page list
 // 参数类型
-export type ProductFinderReqParams= ReqParamsType<'findPageUsingPOST'>
+export type PostProductFinderReqParams= ReqParamsType<'findPageUsingPOST'>
 // 结果类型
-export type ProductFinderReqRes= ReqResType<'findPageUsingPOST'>
+export type PostProductFinderReqRes= ReqResType<'findPageUsingPOST'>
 // 结果中的data类型
-export type ProductFinderReqData= ReqDataType<'findPageUsingPOST'>
-    
-export function postProductFinder(params: ProductFinderReqParams, config?: any): ProductFinderReqRes
+export type PostProductFinderReqData= ReqDataType<'findPageUsingPOST'>
+export function postProductFinder(params: PostProductFinderReqParams, config?: any): PostProductFinderReqRes
 
-// SpeciesCodeSync
 // 参数类型
-export type SpeciesCodeSyncReqParams= ReqParamsType<'speciesCodeSyncUsingGET_1'>
+export type GetSpeciesCodeSyncReqParams= ReqParamsType<'speciesCodeSyncUsingGET_1'>
 // 结果类型
-export type SpeciesCodeSyncReqRes= ReqResType<'speciesCodeSyncUsingGET_1'>
+export type GetSpeciesCodeSyncReqRes= ReqResType<'speciesCodeSyncUsingGET_1'>
 // 结果中的data类型
-export type SpeciesCodeSyncReqData= ReqDataType<'speciesCodeSyncUsingGET_1'>
-    
-export function getSpeciesCodeSync(params: SpeciesCodeSyncReqParams, config?: any): SpeciesCodeSyncReqRes
+export type GetSpeciesCodeSyncReqData= ReqDataType<'speciesCodeSyncUsingGET_1'>
+export function getSpeciesCodeSync(params: GetSpeciesCodeSyncReqParams, config?: any): GetSpeciesCodeSyncReqRes

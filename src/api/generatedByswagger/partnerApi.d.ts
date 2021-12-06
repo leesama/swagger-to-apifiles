@@ -1,84 +1,74 @@
 
 import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
   
-// Edit partner detail
 // 参数类型
-export type PartnerReqParams= ReqParamsType<'editRcInformationUsingPUT'>
+export type PutPartnerReqParams= ReqParamsType<'editRcInformationUsingPUT'>
 // 结果类型
-export type PartnerReqRes= ReqResType<'editRcInformationUsingPUT'>
+export type PutPartnerReqRes= ReqResType<'editRcInformationUsingPUT'>
 // 结果中的data类型
-export type PartnerReqData= ReqDataType<'editRcInformationUsingPUT'>
-    
-export function putPartner(params: PartnerReqParams, config?: any): PartnerReqRes
+export type PutPartnerReqData= ReqDataType<'editRcInformationUsingPUT'>
+export function putPartner(params: PutPartnerReqParams, config?: any): PutPartnerReqRes
 
-// Export partner member excel
 // 参数类型
-export type PartnerGroupMemberExcelReqParams= ReqParamsType<'exportGroupMemberUsingGET'>
+export type GetPartnerGroupMemberExcelReqParams= ReqParamsType<'exportGroupMemberUsingGET'>
 // 结果类型
-export type PartnerGroupMemberExcelReqRes= ReqResType<'exportGroupMemberUsingGET'>
+export type GetPartnerGroupMemberExcelReqRes= ReqResType<'exportGroupMemberUsingGET'>
 // 结果中的data类型
-export type PartnerGroupMemberExcelReqData= ReqDataType<'exportGroupMemberUsingGET'>
-    
-export function getPartnerGroupMemberExcel(params: PartnerGroupMemberExcelReqParams, config?: any): PartnerGroupMemberExcelReqRes
+export type GetPartnerGroupMemberExcelReqData= ReqDataType<'exportGroupMemberUsingGET'>
+export function getPartnerGroupMemberExcel(params: GetPartnerGroupMemberExcelReqParams, config?: any): GetPartnerGroupMemberExcelReqRes
 
-export function postPartnerGroupMemberExcel(params: PartnerGroupMemberExcelReqParams, config?: any): PartnerGroupMemberExcelReqRes
-
-// Export partner member template
 // 参数类型
-export type PartnerGroupMemberExcelTemplateReqParams= ReqParamsType<'exportTemplateUsingGET_1'>
+export type PostPartnerGroupMemberExcelReqParams= ReqParamsType<'importPartnerGroupMemberUsingPOST'>
 // 结果类型
-export type PartnerGroupMemberExcelTemplateReqRes= ReqResType<'exportTemplateUsingGET_1'>
+export type PostPartnerGroupMemberExcelReqRes= ReqResType<'importPartnerGroupMemberUsingPOST'>
 // 结果中的data类型
-export type PartnerGroupMemberExcelTemplateReqData= ReqDataType<'exportTemplateUsingGET_1'>
-    
-export function getPartnerGroupMemberExcelTemplate(params: PartnerGroupMemberExcelTemplateReqParams, config?: any): PartnerGroupMemberExcelTemplateReqRes
+export type PostPartnerGroupMemberExcelReqData= ReqDataType<'importPartnerGroupMemberUsingPOST'>
+export function postPartnerGroupMemberExcel(params: PostPartnerGroupMemberExcelReqParams, config?: any): PostPartnerGroupMemberExcelReqRes
 
-// Partner invoice detail
 // 参数类型
-export type PartnerInvoiceIdReqParams= ReqParamsType<'queryUsingGET_1'>
+export type GetPartnerGroupMemberExcelTemplateReqParams= ReqParamsType<'exportTemplateUsingGET_1'>
 // 结果类型
-export type PartnerInvoiceIdReqRes= ReqResType<'queryUsingGET_1'>
+export type GetPartnerGroupMemberExcelTemplateReqRes= ReqResType<'exportTemplateUsingGET_1'>
 // 结果中的data类型
-export type PartnerInvoiceIdReqData= ReqDataType<'queryUsingGET_1'>
-    
-export function getPartnerInvoiceId(params: PartnerInvoiceIdReqParams, config?: any): PartnerInvoiceIdReqRes
+export type GetPartnerGroupMemberExcelTemplateReqData= ReqDataType<'exportTemplateUsingGET_1'>
+export function getPartnerGroupMemberExcelTemplate(params: GetPartnerGroupMemberExcelTemplateReqParams, config?: any): GetPartnerGroupMemberExcelTemplateReqRes
 
-// Partner public detail
 // 参数类型
-export type PartnerPublicIdReqParams= ReqParamsType<'queryUsingGET_2'>
+export type GetPartnerInvoiceIdReqParams= ReqParamsType<'queryUsingGET_1'>
 // 结果类型
-export type PartnerPublicIdReqRes= ReqResType<'queryUsingGET_2'>
+export type GetPartnerInvoiceIdReqRes= ReqResType<'queryUsingGET_1'>
 // 结果中的data类型
-export type PartnerPublicIdReqData= ReqDataType<'queryUsingGET_2'>
-    
-export function getPartnerPublicId(params: PartnerPublicIdReqParams, config?: any): PartnerPublicIdReqRes
+export type GetPartnerInvoiceIdReqData= ReqDataType<'queryUsingGET_1'>
+export function getPartnerInvoiceId(params: GetPartnerInvoiceIdReqParams, config?: any): GetPartnerInvoiceIdReqRes
 
-// Synchronize partner list
 // 参数类型
-export type PartnerSyncReqParams= ReqParamsType<'synchronizePartnerListUsingPOST'>
+export type GetPartnerPublicIdReqParams= ReqParamsType<'queryUsingGET_2'>
 // 结果类型
-export type PartnerSyncReqRes= ReqResType<'synchronizePartnerListUsingPOST'>
+export type GetPartnerPublicIdReqRes= ReqResType<'queryUsingGET_2'>
 // 结果中的data类型
-export type PartnerSyncReqData= ReqDataType<'synchronizePartnerListUsingPOST'>
-    
-export function postPartnerSync(params: PartnerSyncReqParams, config?: any): PartnerSyncReqRes
+export type GetPartnerPublicIdReqData= ReqDataType<'queryUsingGET_2'>
+export function getPartnerPublicId(params: GetPartnerPublicIdReqParams, config?: any): GetPartnerPublicIdReqRes
 
-// Partner detail
 // 参数类型
-export type PartnerIdReqParams= ReqParamsType<'queryRcInformationUsingGET'>
+export type PostPartnerSyncReqParams= ReqParamsType<'synchronizePartnerListUsingPOST'>
 // 结果类型
-export type PartnerIdReqRes= ReqResType<'queryRcInformationUsingGET'>
+export type PostPartnerSyncReqRes= ReqResType<'synchronizePartnerListUsingPOST'>
 // 结果中的data类型
-export type PartnerIdReqData= ReqDataType<'queryRcInformationUsingGET'>
-    
-export function getPartnerId(params: PartnerIdReqParams, config?: any): PartnerIdReqRes
+export type PostPartnerSyncReqData= ReqDataType<'synchronizePartnerListUsingPOST'>
+export function postPartnerSync(params: PostPartnerSyncReqParams, config?: any): PostPartnerSyncReqRes
 
-// Partner page list
 // 参数类型
-export type PartnersReqParams= ReqParamsType<'partnerPageUsingGET'>
+export type GetPartnerIdReqParams= ReqParamsType<'queryRcInformationUsingGET'>
 // 结果类型
-export type PartnersReqRes= ReqResType<'partnerPageUsingGET'>
+export type GetPartnerIdReqRes= ReqResType<'queryRcInformationUsingGET'>
 // 结果中的data类型
-export type PartnersReqData= ReqDataType<'partnerPageUsingGET'>
-    
-export function getPartners(params: PartnersReqParams, config?: any): PartnersReqRes
+export type GetPartnerIdReqData= ReqDataType<'queryRcInformationUsingGET'>
+export function getPartnerId(params: GetPartnerIdReqParams, config?: any): GetPartnerIdReqRes
+
+// 参数类型
+export type GetPartnersReqParams= ReqParamsType<'partnerPageUsingGET'>
+// 结果类型
+export type GetPartnersReqRes= ReqResType<'partnerPageUsingGET'>
+// 结果中的data类型
+export type GetPartnersReqData= ReqDataType<'partnerPageUsingGET'>
+export function getPartners(params: GetPartnersReqParams, config?: any): GetPartnersReqRes

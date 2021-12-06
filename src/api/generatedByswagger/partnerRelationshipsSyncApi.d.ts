@@ -1,36 +1,42 @@
 
 import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
   
-// Add partner relationship
 // 参数类型
-export type PartnerRelationshipSyncReqParams= ReqParamsType<'addUsingPOST_7'>
+export type PostPartnerRelationshipSyncReqParams= ReqParamsType<'addUsingPOST_7'>
 // 结果类型
-export type PartnerRelationshipSyncReqRes= ReqResType<'addUsingPOST_7'>
+export type PostPartnerRelationshipSyncReqRes= ReqResType<'addUsingPOST_7'>
 // 结果中的data类型
-export type PartnerRelationshipSyncReqData= ReqDataType<'addUsingPOST_7'>
-    
-export function deletePartnerRelationshipSync(params: PartnerRelationshipSyncReqParams, config?: any): PartnerRelationshipSyncReqRes
+export type PostPartnerRelationshipSyncReqData= ReqDataType<'addUsingPOST_7'>
+export function postPartnerRelationshipSync(params: PostPartnerRelationshipSyncReqParams, config?: any): PostPartnerRelationshipSyncReqRes
 
-export function postPartnerRelationshipSync(params: PartnerRelationshipSyncReqParams, config?: any): PartnerRelationshipSyncReqRes
-
-export function putPartnerRelationshipSync(params: PartnerRelationshipSyncReqParams, config?: any): PartnerRelationshipSyncReqRes
-
-// Synchronize partner relationship list
 // 参数类型
-export type PartnerRelationshipSyncListReqParams= ReqParamsType<'syncListUsingGET'>
+export type PutPartnerRelationshipSyncReqParams= ReqParamsType<'syncRelationShipByCompanyIdUsingPUT'>
 // 结果类型
-export type PartnerRelationshipSyncListReqRes= ReqResType<'syncListUsingGET'>
+export type PutPartnerRelationshipSyncReqRes= ReqResType<'syncRelationShipByCompanyIdUsingPUT'>
 // 结果中的data类型
-export type PartnerRelationshipSyncListReqData= ReqDataType<'syncListUsingGET'>
-    
-export function getPartnerRelationshipSyncList(params: PartnerRelationshipSyncListReqParams, config?: any): PartnerRelationshipSyncListReqRes
+export type PutPartnerRelationshipSyncReqData= ReqDataType<'syncRelationShipByCompanyIdUsingPUT'>
+export function putPartnerRelationshipSync(params: PutPartnerRelationshipSyncReqParams, config?: any): PutPartnerRelationshipSyncReqRes
 
-// Partner relationship detail
 // 参数类型
-export type PartnerRelationshipSyncIdReqParams= ReqParamsType<'syncRelationShipByCompanyIdUsingGET'>
+export type DeletePartnerRelationshipSyncReqParams= ReqParamsType<'deleteUsingDELETE_7'>
 // 结果类型
-export type PartnerRelationshipSyncIdReqRes= ReqResType<'syncRelationShipByCompanyIdUsingGET'>
+export type DeletePartnerRelationshipSyncReqRes= ReqResType<'deleteUsingDELETE_7'>
 // 结果中的data类型
-export type PartnerRelationshipSyncIdReqData= ReqDataType<'syncRelationShipByCompanyIdUsingGET'>
-    
-export function getPartnerRelationshipSyncId(params: PartnerRelationshipSyncIdReqParams, config?: any): PartnerRelationshipSyncIdReqRes
+export type DeletePartnerRelationshipSyncReqData= ReqDataType<'deleteUsingDELETE_7'>
+export function deletePartnerRelationshipSync(params: DeletePartnerRelationshipSyncReqParams, config?: any): DeletePartnerRelationshipSyncReqRes
+
+// 参数类型
+export type GetPartnerRelationshipSyncListReqParams= ReqParamsType<'syncListUsingGET'>
+// 结果类型
+export type GetPartnerRelationshipSyncListReqRes= ReqResType<'syncListUsingGET'>
+// 结果中的data类型
+export type GetPartnerRelationshipSyncListReqData= ReqDataType<'syncListUsingGET'>
+export function getPartnerRelationshipSyncList(params: GetPartnerRelationshipSyncListReqParams, config?: any): GetPartnerRelationshipSyncListReqRes
+
+// 参数类型
+export type GetPartnerRelationshipSyncIdReqParams= ReqParamsType<'syncRelationShipByCompanyIdUsingGET'>
+// 结果类型
+export type GetPartnerRelationshipSyncIdReqRes= ReqResType<'syncRelationShipByCompanyIdUsingGET'>
+// 结果中的data类型
+export type GetPartnerRelationshipSyncIdReqData= ReqDataType<'syncRelationShipByCompanyIdUsingGET'>
+export function getPartnerRelationshipSyncId(params: GetPartnerRelationshipSyncIdReqParams, config?: any): GetPartnerRelationshipSyncIdReqRes

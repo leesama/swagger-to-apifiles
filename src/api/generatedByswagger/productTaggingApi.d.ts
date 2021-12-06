@@ -1,36 +1,42 @@
 
 import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
   
-// Add product tagging
 // 参数类型
-export type ProductTaggingReqParams= ReqParamsType<'addTaggingUsingPOST'>
+export type PostProductTaggingReqParams= ReqParamsType<'addTaggingUsingPOST'>
 // 结果类型
-export type ProductTaggingReqRes= ReqResType<'addTaggingUsingPOST'>
+export type PostProductTaggingReqRes= ReqResType<'addTaggingUsingPOST'>
 // 结果中的data类型
-export type ProductTaggingReqData= ReqDataType<'addTaggingUsingPOST'>
-    
-export function deleteProductTagging(params: ProductTaggingReqParams, config?: any): ProductTaggingReqRes
+export type PostProductTaggingReqData= ReqDataType<'addTaggingUsingPOST'>
+export function postProductTagging(params: PostProductTaggingReqParams, config?: any): PostProductTaggingReqRes
 
-export function postProductTagging(params: ProductTaggingReqParams, config?: any): ProductTaggingReqRes
-
-export function putProductTagging(params: ProductTaggingReqParams, config?: any): ProductTaggingReqRes
-
-// Product tagging list
 // 参数类型
-export type ProductTaggingListReqParams= ReqParamsType<'findTaggingListUsingGET'>
+export type PutProductTaggingReqParams= ReqParamsType<'updateTaggingUsingPUT'>
 // 结果类型
-export type ProductTaggingListReqRes= ReqResType<'findTaggingListUsingGET'>
+export type PutProductTaggingReqRes= ReqResType<'updateTaggingUsingPUT'>
 // 结果中的data类型
-export type ProductTaggingListReqData= ReqDataType<'findTaggingListUsingGET'>
-    
-export function getProductTaggingList(params: ProductTaggingListReqParams, config?: any): ProductTaggingListReqRes
+export type PutProductTaggingReqData= ReqDataType<'updateTaggingUsingPUT'>
+export function putProductTagging(params: PutProductTaggingReqParams, config?: any): PutProductTaggingReqRes
 
-// Product tagging page list
 // 参数类型
-export type ProductTaggingsReqParams= ReqParamsType<'findTaggingPageUsingGET'>
+export type DeleteProductTaggingReqParams= ReqParamsType<'deleteTaggingUsingDELETE'>
 // 结果类型
-export type ProductTaggingsReqRes= ReqResType<'findTaggingPageUsingGET'>
+export type DeleteProductTaggingReqRes= ReqResType<'deleteTaggingUsingDELETE'>
 // 结果中的data类型
-export type ProductTaggingsReqData= ReqDataType<'findTaggingPageUsingGET'>
-    
-export function getProductTaggings(params: ProductTaggingsReqParams, config?: any): ProductTaggingsReqRes
+export type DeleteProductTaggingReqData= ReqDataType<'deleteTaggingUsingDELETE'>
+export function deleteProductTagging(params: DeleteProductTaggingReqParams, config?: any): DeleteProductTaggingReqRes
+
+// 参数类型
+export type GetProductTaggingListReqParams= ReqParamsType<'findTaggingListUsingGET'>
+// 结果类型
+export type GetProductTaggingListReqRes= ReqResType<'findTaggingListUsingGET'>
+// 结果中的data类型
+export type GetProductTaggingListReqData= ReqDataType<'findTaggingListUsingGET'>
+export function getProductTaggingList(params: GetProductTaggingListReqParams, config?: any): GetProductTaggingListReqRes
+
+// 参数类型
+export type GetProductTaggingsReqParams= ReqParamsType<'findTaggingPageUsingGET'>
+// 结果类型
+export type GetProductTaggingsReqRes= ReqResType<'findTaggingPageUsingGET'>
+// 结果中的data类型
+export type GetProductTaggingsReqData= ReqDataType<'findTaggingPageUsingGET'>
+export function getProductTaggings(params: GetProductTaggingsReqParams, config?: any): GetProductTaggingsReqRes

@@ -1,12 +1,13 @@
 
 // Product api
 // Product
-import request from '../utils/request';
+import request from '../../utils/request';
 // Collections with related products page list
+
 export function getCollectionsWithRelatedProducts(params,config = {}){
   return request(
     {
-      url: '/collections-with-related-products',
+      url: `/collections-with-related-products`,
       method: 'GET',
       params,
       ...config
@@ -14,20 +15,22 @@ export function getCollectionsWithRelatedProducts(params,config = {}){
   )
 }
 // lifestyleSync
+
 export function getLifestyleSync(config = {}){
   return request(
     {
-      url: '/lifestyleSync',
+      url: `/lifestyleSync`,
       method: 'GET',
       ...config
     }
   )
 }
 // Collection  page
+
 export function getPoxGoods(params,config = {}){
   return request(
     {
-      url: '/pox-goods',
+      url: `/pox-goods`,
       method: 'GET',
       params,
       ...config
@@ -35,6 +38,7 @@ export function getPoxGoods(params,config = {}){
   )
 }
 // Collection detail by extnernalId
+
 export function getPoxGoodsDetailExtnernalIdExtnernalId(extnernalId,config = {}){
   return request(
     {
@@ -45,6 +49,7 @@ export function getPoxGoodsDetailExtnernalIdExtnernalId(extnernalId,config = {})
   )
 }
 // Collection detail
+
 export function getPoxGoodsDetailId(id,config = {}){
   return request(
     {
@@ -55,10 +60,11 @@ export function getPoxGoodsDetailId(id,config = {}){
   )
 }
 // Pox goods info page
+
 export function getPoxGoodsInfo(params,config = {}){
   return request(
     {
-      url: '/pox-goods-info',
+      url: `/pox-goods-info`,
       method: 'GET',
       params,
       ...config
@@ -66,6 +72,7 @@ export function getPoxGoodsInfo(params,config = {}){
   )
 }
 // Pox goods info list
+
 export function getPoxGoodsInfoId(id,config = {}){
   return request(
     {
@@ -76,20 +83,22 @@ export function getPoxGoodsInfoId(id,config = {}){
   )
 }
 // syncPoxGoods
+
 export function getPoxGoodsSync(config = {}){
   return request(
     {
-      url: '/pox-goods-sync',
+      url: `/pox-goods-sync`,
       method: 'GET',
       ...config
     }
   )
 }
 // ProductFinder page list
+
 export function postProductFinder(data,config = {}){
   return request(
     {
-      url: '/productFinder',
+      url: `/productFinder`,
       method: 'POST',
       data,
       ...config
@@ -97,10 +106,11 @@ export function postProductFinder(data,config = {}){
   )
 }
 // SpeciesCodeSync
+
 export function getSpeciesCodeSync(config = {}){
   return request(
     {
-      url: '/speciesCodeSync',
+      url: `/speciesCodeSync`,
       method: 'GET',
       ...config
     }

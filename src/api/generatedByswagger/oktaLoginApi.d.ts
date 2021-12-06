@@ -1,32 +1,26 @@
 
 import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
   
-// Generate jwt token by okta token
 // 参数类型
-export type OktaAuthLoginOutReqParams= ReqParamsType<'loginOutUsingPOST'>
+export type PostOktaAuthLoginOutReqParams= ReqParamsType<'loginOutUsingPOST'>
 // 结果类型
-export type OktaAuthLoginOutReqRes= ReqResType<'loginOutUsingPOST'>
+export type PostOktaAuthLoginOutReqRes= ReqResType<'loginOutUsingPOST'>
 // 结果中的data类型
-export type OktaAuthLoginOutReqData= ReqDataType<'loginOutUsingPOST'>
-    
-export function postOktaAuthLoginOut(params: OktaAuthLoginOutReqParams, config?: any): OktaAuthLoginOutReqRes
+export type PostOktaAuthLoginOutReqData= ReqDataType<'loginOutUsingPOST'>
+export function postOktaAuthLoginOut(params: PostOktaAuthLoginOutReqParams, config?: any): PostOktaAuthLoginOutReqRes
 
-// Po okta call back
 // 参数类型
-export type OktaAuthPoCallbackReqParams= ReqParamsType<'poOktaCallbackUsingPOST'>
+export type PostOktaAuthPoCallbackReqParams= ReqParamsType<'poOktaCallbackUsingPOST'>
 // 结果类型
-export type OktaAuthPoCallbackReqRes= ReqResType<'poOktaCallbackUsingPOST'>
+export type PostOktaAuthPoCallbackReqRes= ReqResType<'poOktaCallbackUsingPOST'>
 // 结果中的data类型
-export type OktaAuthPoCallbackReqData= ReqDataType<'poOktaCallbackUsingPOST'>
-    
-export function postOktaAuthPoCallback(params: OktaAuthPoCallbackReqParams, config?: any): OktaAuthPoCallbackReqRes
+export type PostOktaAuthPoCallbackReqData= ReqDataType<'poOktaCallbackUsingPOST'>
+export function postOktaAuthPoCallback(params: PostOktaAuthPoCallbackReqParams, config?: any): PostOktaAuthPoCallbackReqRes
 
-// Generate jwt token by okta token
 // 参数类型
-export type OktaAuthTokenReqParams= ReqParamsType<'getJwtTokenUsingPOST'>
+export type PostOktaAuthTokenReqParams= ReqParamsType<'getJwtTokenUsingPOST'>
 // 结果类型
-export type OktaAuthTokenReqRes= ReqResType<'getJwtTokenUsingPOST'>
+export type PostOktaAuthTokenReqRes= ReqResType<'getJwtTokenUsingPOST'>
 // 结果中的data类型
-export type OktaAuthTokenReqData= ReqDataType<'getJwtTokenUsingPOST'>
-    
-export function postOktaAuthToken(params: OktaAuthTokenReqParams, config?: any): OktaAuthTokenReqRes
+export type PostOktaAuthTokenReqData= ReqDataType<'getJwtTokenUsingPOST'>
+export function postOktaAuthToken(params: PostOktaAuthTokenReqParams, config?: any): PostOktaAuthTokenReqRes

@@ -1,23 +1,48 @@
 
 // Partner relationships sync api
 // Partner relationships
-import request from '../utils/request';
+import request from '../../utils/request';
 // Add partner relationship
+
+export function postPartnerRelationshipSync(data,config = {}){
+  return request(
+    {
+      url: `/partner-relationship/sync`,
+      method: 'POST',
+      data,
+      ...config
+    }
+  )
+}
+// Edit partner relationship
+
 export function putPartnerRelationshipSync(data,config = {}){
   return request(
     {
-      url: '/partner-relationship/sync',
+      url: `/partner-relationship/sync`,
       method: 'PUT',
       data,
       ...config
     }
   )
 }
+// Delete partner relationship
+
+export function deletePartnerRelationshipSync(,config = {}){
+  return request(
+    {
+      url: `/partner-relationship/sync`,
+      method: 'DELETE',
+      ...config
+    }
+  )
+}
 // Synchronize partner relationship list
+
 export function getPartnerRelationshipSyncList(params,config = {}){
   return request(
     {
-      url: '/partner-relationship/sync/list',
+      url: `/partner-relationship/sync/list`,
       method: 'GET',
       params,
       ...config
@@ -25,6 +50,7 @@ export function getPartnerRelationshipSyncList(params,config = {}){
   )
 }
 // Partner relationship detail
+
 export function getPartnerRelationshipSyncId(id,config = {}){
   return request(
     {

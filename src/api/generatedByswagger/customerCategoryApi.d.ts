@@ -1,46 +1,50 @@
 
 import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
   
-// Add customer category
 // 参数类型
-export type CustomerCategoryReqParams= ReqParamsType<'addUsingPOST_1'>
+export type PostCustomerCategoryReqParams= ReqParamsType<'addUsingPOST_1'>
 // 结果类型
-export type CustomerCategoryReqRes= ReqResType<'addUsingPOST_1'>
+export type PostCustomerCategoryReqRes= ReqResType<'addUsingPOST_1'>
 // 结果中的data类型
-export type CustomerCategoryReqData= ReqDataType<'addUsingPOST_1'>
-    
-export function postCustomerCategory(params: CustomerCategoryReqParams, config?: any): CustomerCategoryReqRes
+export type PostCustomerCategoryReqData= ReqDataType<'addUsingPOST_1'>
+export function postCustomerCategory(params: PostCustomerCategoryReqParams, config?: any): PostCustomerCategoryReqRes
 
-export function putCustomerCategory(params: CustomerCategoryReqParams, config?: any): CustomerCategoryReqRes
-
-// Upload customer category image
 // 参数类型
-export type CustomerCategoryImageReqParams= ReqParamsType<'uploadImageUsingPOST'>
+export type PutCustomerCategoryReqParams= ReqParamsType<'updateUsingPUT'>
 // 结果类型
-export type CustomerCategoryImageReqRes= ReqResType<'uploadImageUsingPOST'>
+export type PutCustomerCategoryReqRes= ReqResType<'updateUsingPUT'>
 // 结果中的data类型
-export type CustomerCategoryImageReqData= ReqDataType<'uploadImageUsingPOST'>
-    
-export function postCustomerCategoryImage(params: CustomerCategoryImageReqParams, config?: any): CustomerCategoryImageReqRes
+export type PutCustomerCategoryReqData= ReqDataType<'updateUsingPUT'>
+export function putCustomerCategory(params: PutCustomerCategoryReqParams, config?: any): PutCustomerCategoryReqRes
 
-// Customer category detail
 // 参数类型
-export type CustomerCategoryIdReqParams= ReqParamsType<'findByIdUsingGET'>
+export type PostCustomerCategoryImageReqParams= ReqParamsType<'uploadImageUsingPOST'>
 // 结果类型
-export type CustomerCategoryIdReqRes= ReqResType<'findByIdUsingGET'>
+export type PostCustomerCategoryImageReqRes= ReqResType<'uploadImageUsingPOST'>
 // 结果中的data类型
-export type CustomerCategoryIdReqData= ReqDataType<'findByIdUsingGET'>
-    
-export function getCustomerCategoryId(params: CustomerCategoryIdReqParams, config?: any): CustomerCategoryIdReqRes
+export type PostCustomerCategoryImageReqData= ReqDataType<'uploadImageUsingPOST'>
+export function postCustomerCategoryImage(params: PostCustomerCategoryImageReqParams, config?: any): PostCustomerCategoryImageReqRes
 
-export function deleteCustomerCategoryId(params: CustomerCategoryIdReqParams, config?: any): CustomerCategoryIdReqRes
-
-// Customer category page list
 // 参数类型
-export type CustomerCategorysReqParams= ReqParamsType<'findPageUsingGET'>
+export type GetCustomerCategoryIdReqParams= ReqParamsType<'findByIdUsingGET'>
 // 结果类型
-export type CustomerCategorysReqRes= ReqResType<'findPageUsingGET'>
+export type GetCustomerCategoryIdReqRes= ReqResType<'findByIdUsingGET'>
 // 结果中的data类型
-export type CustomerCategorysReqData= ReqDataType<'findPageUsingGET'>
-    
-export function getCustomerCategorys(params: CustomerCategorysReqParams, config?: any): CustomerCategorysReqRes
+export type GetCustomerCategoryIdReqData= ReqDataType<'findByIdUsingGET'>
+export function getCustomerCategoryId(params: GetCustomerCategoryIdReqParams, config?: any): GetCustomerCategoryIdReqRes
+
+// 参数类型
+export type DeleteCustomerCategoryIdReqParams= ReqParamsType<'deleteUsingDELETE'>
+// 结果类型
+export type DeleteCustomerCategoryIdReqRes= ReqResType<'deleteUsingDELETE'>
+// 结果中的data类型
+export type DeleteCustomerCategoryIdReqData= ReqDataType<'deleteUsingDELETE'>
+export function deleteCustomerCategoryId(params: DeleteCustomerCategoryIdReqParams, config?: any): DeleteCustomerCategoryIdReqRes
+
+// 参数类型
+export type GetCustomerCategorysReqParams= ReqParamsType<'findPageUsingGET'>
+// 结果类型
+export type GetCustomerCategorysReqRes= ReqResType<'findPageUsingGET'>
+// 结果中的data类型
+export type GetCustomerCategorysReqData= ReqDataType<'findPageUsingGET'>
+export function getCustomerCategorys(params: GetCustomerCategorysReqParams, config?: any): GetCustomerCategorysReqRes
