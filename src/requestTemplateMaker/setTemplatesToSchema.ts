@@ -16,7 +16,7 @@ export type ${typePrefix}ReqParams= ReqParamsType<'${operationId}'>
 export type ${typePrefix}ReqRes= ReqResType<'${operationId}'>
 // 结果中的data类型
 export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
-export function ${method}${methodName}(params: ${typePrefix}ReqParams, config?: any): ${typePrefix}ReqRes
+export function ${method}${methodName}(params: ${typePrefix}ReqParams, config?: any): Promise<${typePrefix}ReqRes>
 `;
 };
 // 组装Service数据
