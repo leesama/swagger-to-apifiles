@@ -6,12 +6,13 @@ const getTemplateType = (
   method: string,
   methodName: string,
   pascalCaseMethodName: string,
-  operationId: string
+  operationId: string,
+  reqParamsType: string
 ) => {
   const typePrefix = `${pascalCase(method)}${pascalCaseMethodName}`;
   return `
 // 参数类型
-export type ${typePrefix}ReqParams= ReqParamsType<'${operationId}'>
+export type ${typePrefix}ReqParams= ${reqParamsType}
 // 结果类型
 export type ${typePrefix}ReqRes= ReqResType<'${operationId}'>
 // 结果中的data类型
@@ -33,11 +34,12 @@ const makeService = (
   let template = `
 // ${description}
 `;
-  const typeTemplate = getTemplateType(
+  let typeTemplate = getTemplateType(
     method,
     methodName,
     pascalCaseMethodName,
-    operationId
+    operationId,
+    `ReqParamsType<'${operationId}'>`
   );
   if (method === "get") {
     // 如果是restRul get
@@ -47,6 +49,13 @@ const makeService = (
         param = match.replace("{", "").replace("}", "");
         return `$${match}`;
       });
+      typeTemplate = getTemplateType(
+        method,
+        methodName,
+        pascalCaseMethodName,
+        operationId,
+        `ReqParamsType<'${operationId}'>['${param}']`
+      );
       template += `
 export function get${methodName}(${param},config = {}){
   return request(
@@ -91,6 +100,13 @@ export function get${methodName}(config = {}){
         param = match.replace("{", "").replace("}", "");
         return `$${match}`;
       });
+      typeTemplate = getTemplateType(
+        method,
+        methodName,
+        pascalCaseMethodName,
+        operationId,
+        `ReqParamsType<'${operationId}'>['${param}']`
+      );
       template += `
 export function delete${methodName}(${param},config = {}){
   return request(
