@@ -13,11 +13,9 @@ const getTemplateType = (
   return `
 // 参数类型
 export type ${typePrefix}ReqParams= ${reqParamsType}
-// 结果类型
-export type ${typePrefix}ReqRes= ReqResType<'${operationId}'>
-// 结果中的data类型
+// 返回值类型
 export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
-export function ${method}${methodName}(params: ${typePrefix}ReqParams, config?: any): Promise<${typePrefix}ReqRes>
+export function ${method}${methodName}(params: ${typePrefix}ReqParams, config?: any): Promise<${typePrefix}ReqData>
 `;
 };
 // 组装Service数据
