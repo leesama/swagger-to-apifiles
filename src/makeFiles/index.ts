@@ -21,21 +21,22 @@ export default async ({
     path.resolve(`src/${dirName}/types/request.d.ts`),
     openapiTSData
   );
+
+  // const responseTSData = openapiTSData.replace(
+  //   /(?<=(\| |: |\())(".*?")/g,
+  //   (text) => {
+  //     return `
+  //     {
+  //       name: ${text};
+  //       message: string;
+  //       code: ${text};
+  //     }`;
+  //   }
+  // );
   // 生成返回值类型  用于生成正确的枚举
-  const responseTSData = openapiTSData.replace(
-    /(?<=(\| |: |\())(".*?")/g,
-    (text) => {
-      return `
-      {
-        name: ${text};
-        message: string;
-        code: ${text};
-      }`;
-    }
-  );
   outputFileSync(
     path.resolve(`src/${dirName}/types/response.d.ts`),
-    responseTSData
+    openapiTSData
   );
   // 生成工具泛型
   ejs.renderFile(
