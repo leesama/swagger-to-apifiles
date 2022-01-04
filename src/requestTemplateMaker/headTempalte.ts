@@ -4,6 +4,6 @@ import config from "../config";
 const headTempalte = config.requestImportCode;
 // 类型文件的头部模板
 const typeHeadTemplate = `
-import type {ReqParamsType,ReqDataType,ReqResType} from "./types/serviceUtilGeneric"
+import type {ReqParamsType,ReqDataType} from "./types/serviceUtilGeneric"
   `;
 export { headTempalte, typeHeadTemplate };
