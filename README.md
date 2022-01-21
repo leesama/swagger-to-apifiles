@@ -1,4 +1,4 @@
-# swagger-to-service-js
+# swagger-to-apifiles
 
 根据 swagger api-doc 自动生成 jsapi 文件、请求函数
 
