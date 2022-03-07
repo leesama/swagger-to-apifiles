@@ -15,7 +15,7 @@ const getTemplateType = (
 export type ${typePrefix}ReqParams= ${reqParamsType}
 // 返回值类型
 export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
-export function ${method}${methodName}(params: ${typePrefix}ReqParams, config?: any): Promise<${typePrefix}ReqData>
+export function ${method}${methodName}(params?: ${typePrefix}ReqParams, config?: any): Promise<${typePrefix}ReqData>
 `;
 };
 // 组装Service数据
@@ -55,11 +55,13 @@ const makeService = (
         `ReqParamsType<'${operationId}'>['${param}']`
       );
       template += `
-export function get${methodName}(${param},config = {}){
+export function get${methodName}(${param},config){
   return request(
     {
       url: \`${requestUrl}\`,
-      method: 'GET',
+      method: 'GET', 
+    },
+    {
       ...config
     }
   )
@@ -67,23 +69,27 @@ export function get${methodName}(${param},config = {}){
     } else if (pathObj.parameters) {
       // 如果有参数
       template += `
-export function get${methodName}(params,config = {}){
+export function get${methodName}(params,config){
   return request(
     {
       url: \`${requestUrl}\`,
       method: 'GET',
-      params,
+      params
+    },
+    {
       ...config
     }
   )
 }`;
     } else {
       template += `
-export function get${methodName}(config = {}){
+export function get${methodName}(config){
   return request(
     {
       url: \`${requestUrl}\`,
       method: 'GET',
+    },
+    {
       ...config
     }
   )
@@ -106,11 +112,13 @@ export function get${methodName}(config = {}){
         `ReqParamsType<'${operationId}'>['${param}']`
       );
       template += `
-export function delete${methodName}(${param},config = {}){
+export function delete${methodName}(${param},config){
   return request(
     {
       url: \`${requestUrl}\`,
       method: 'DELETE',
+    },
+    {
       ...config
     }
   )
@@ -118,23 +126,27 @@ export function delete${methodName}(${param},config = {}){
     } else if (pathObj.parameters) {
       // 如果有参数
       template += `
-export function delete${methodName}(data,config = {}){
+export function delete${methodName}(data,config){
   return request(
     {
       url: \`${requestUrl}\`,
       method: 'DELETE',
-      data,
+      data
+    },
+    {
       ...config
     }
   )
 }`;
     } else {
       template += `
-export function delete${methodName}(config = {}){
+export function delete${methodName}(config){
   return request(
     {
       url: \`${requestUrl}\`,
-      method: 'DELETE',
+      method: 'DELETE'
+    },
+    {
       ...config
     }
   )
@@ -143,12 +155,14 @@ export function delete${methodName}(config = {}){
   }
   if (method === "post") {
     template += `
-export function post${methodName}(data,config = {}){
+export function post${methodName}(data,config){
   return request(
     {
       url: \`${requestUrl}\`,
       method: 'POST',
-      data,
+      data
+    },
+    {
       ...config
     }
   )
@@ -156,12 +170,14 @@ export function post${methodName}(data,config = {}){
   }
   if (method === "put") {
     template += `
-export function put${methodName}(data,config = {}){
+export function put${methodName}(data,config){
   return request(
     {
       url: \`${requestUrl}\`,
       method: 'PUT',
-      data,
+      data
+    },
+    {
       ...config
     }
   )
