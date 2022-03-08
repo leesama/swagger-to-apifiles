@@ -14,7 +14,7 @@ const getTemplateType = (
 // 参数类型
 export type ${typePrefix}ReqParams= ${reqParamsType}
 // 返回值类型
-export type ${typePrefix}ReqData= ReqDataType<'${operationId}'>
+export type ${typePrefix}ReqData= Required<ReqDataType<'${operationId}'>>
 export function ${method}${methodName}(params?: ${typePrefix}ReqParams, config?: any): Promise<${typePrefix}ReqData>
 `;
 };
