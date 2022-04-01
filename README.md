@@ -10,6 +10,10 @@
 
 再也不必自己定义请求方法 请求文件
 
+# 文件生成规则
+
+![image](https://github.com/leesama/swagger-to-apifiles/blob/main/images/desc.png)
+
 # Step 1
 
 安装插件
